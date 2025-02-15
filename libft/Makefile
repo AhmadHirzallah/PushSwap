@@ -9,7 +9,7 @@ NAME         = $(LIBS_DIR)/libft.a
 
 # Compiler settings
 CC           = cc
-CFLAGS       = -Wall -Wextra -Werror -g
+CFLAGS       = -Wall -Wextra -Werror -g 
 AR           = ar
 
 # Color definitions for messages
@@ -38,28 +38,30 @@ SRCS_MEM = $(LIBFT_DIR)/mem/ft_bzero.c    \
 
 # String functions (in libft/str/)
 SRCS_STR = $(LIBFT_DIR)/str/ft_atoi.c      \
-           $(LIBFT_DIR)/str/ft_isalnum.c   \
-           $(LIBFT_DIR)/str/ft_isalpha.c   \
-           $(LIBFT_DIR)/str/ft_isascii.c   \
-           $(LIBFT_DIR)/str/ft_isdigit.c   \
-           $(LIBFT_DIR)/str/ft_isprint.c   \
-           $(LIBFT_DIR)/str/ft_itoa.c      \
-           $(LIBFT_DIR)/str/ft_split.c     \
-           $(LIBFT_DIR)/str/ft_strchr.c    \
-           $(LIBFT_DIR)/str/ft_strdup.c    \
-           $(LIBFT_DIR)/str/ft_striteri.c  \
-           $(LIBFT_DIR)/str/ft_strjoin.c   \
-           $(LIBFT_DIR)/str/ft_strlcat.c   \
-           $(LIBFT_DIR)/str/ft_strlcpy.c   \
-           $(LIBFT_DIR)/str/ft_strlen.c    \
-           $(LIBFT_DIR)/str/ft_strmapi.c   \
-           $(LIBFT_DIR)/str/ft_strncmp.c   \
-           $(LIBFT_DIR)/str/ft_strnstr.c   \
-           $(LIBFT_DIR)/str/ft_strrchr.c   \
-           $(LIBFT_DIR)/str/ft_strtrim.c   \
-           $(LIBFT_DIR)/str/ft_substr.c    \
-           $(LIBFT_DIR)/str/ft_tolower.c   \
-           $(LIBFT_DIR)/str/ft_toupper.c
+			$(LIBFT_DIR)/str/ft_isalnum.c   \
+			$(LIBFT_DIR)/str/ft_isalpha.c   \
+			$(LIBFT_DIR)/str/ft_isascii.c   \
+			$(LIBFT_DIR)/str/ft_isdigit.c   \
+			$(LIBFT_DIR)/str/ft_isprint.c   \
+			$(LIBFT_DIR)/str/ft_itoa.c      \
+			$(LIBFT_DIR)/str/ft_split.c     \
+			$(LIBFT_DIR)/str/ft_strchr.c    \
+			$(LIBFT_DIR)/str/ft_strdup.c    \
+			$(LIBFT_DIR)/str/ft_striteri.c  \
+			$(LIBFT_DIR)/str/ft_strjoin.c   \
+			$(LIBFT_DIR)/str/ft_strlcat.c   \
+			$(LIBFT_DIR)/str/ft_strlcpy.c   \
+			$(LIBFT_DIR)/str/ft_strlen.c    \
+			$(LIBFT_DIR)/str/ft_strmapi.c   \
+			$(LIBFT_DIR)/str/ft_strncmp.c   \
+			$(LIBFT_DIR)/str/ft_strnstr.c   \
+			$(LIBFT_DIR)/str/ft_strrchr.c   \
+			$(LIBFT_DIR)/str/ft_strtrim.c   \
+			$(LIBFT_DIR)/str/ft_substr.c    \
+			$(LIBFT_DIR)/str/ft_tolower.c   \
+			$(LIBFT_DIR)/str/ft_toupper.c   \
+			$(LIBFT_DIR)/str/split_multi.c  \
+			$(LIBFT_DIR)/str/str_nullify_delimiters.c
 
 # Combine all source files into one list (for reference)
 LIBFT_SRCS = $(SRCS_IO) $(SRCS_LST) $(SRCS_MEM) $(SRCS_STR)
@@ -77,7 +79,7 @@ all: $(NAME)
 $(OBJS_DIR)/io/%.o: $(LIBFT_DIR)/io/%.c
 	@mkdir -p $(dir $@)
 	@echo "$(GREEN)Compiling I/O: $< $(RESET)"
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDE_DIR)
 
 
 $(OBJS_DIR)/mem/%.o: $(LIBFT_DIR)/mem/%.c

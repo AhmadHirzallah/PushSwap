@@ -1,0 +1,73 @@
+\033[0;93mCleaning objects in ../objs...\033[0;39m
+\033[0;93mRemoving archive ../libs/libft.a...\033[0;39m
+\033[0;92mCompiling I/O: io/ft_putchar_fd.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c io/ft_putchar_fd.c -o ../objs/io/ft_putchar_fd.o -I../include
+\033[0;92mCompiling I/O: io/ft_putendl_fd.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c io/ft_putendl_fd.c -o ../objs/io/ft_putendl_fd.o -I../include
+\033[0;92mCompiling I/O: io/ft_putnbr_fd.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c io/ft_putnbr_fd.c -o ../objs/io/ft_putnbr_fd.o -I../include
+\033[0;92mCompiling I/O: io/ft_putstr_fd.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c io/ft_putstr_fd.c -o ../objs/io/ft_putstr_fd.o -I../include
+\033[0;92mCompiling MEM: mem/ft_bzero.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c mem/ft_bzero.c -o ../objs/mem/ft_bzero.o -I ../include
+\033[0;92mCompiling MEM: mem/ft_calloc.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c mem/ft_calloc.c -o ../objs/mem/ft_calloc.o -I ../include
+\033[0;92mCompiling MEM: mem/ft_memchr.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c mem/ft_memchr.c -o ../objs/mem/ft_memchr.o -I ../include
+\033[0;92mCompiling MEM: mem/ft_memcmp.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c mem/ft_memcmp.c -o ../objs/mem/ft_memcmp.o -I ../include
+\033[0;92mCompiling MEM: mem/ft_memcpy.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c mem/ft_memcpy.c -o ../objs/mem/ft_memcpy.o -I ../include
+\033[0;92mCompiling MEM: mem/ft_memmove.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c mem/ft_memmove.c -o ../objs/mem/ft_memmove.o -I ../include
+\033[0;92mCompiling MEM: mem/ft_memset.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c mem/ft_memset.c -o ../objs/mem/ft_memset.o -I ../include
+\033[0;92mCompiling STR: str/ft_atoi.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_atoi.c -o ../objs/str/ft_atoi.o -I ../include
+\033[0;92mCompiling STR: str/ft_isalnum.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_isalnum.c -o ../objs/str/ft_isalnum.o -I ../include
+\033[0;92mCompiling STR: str/ft_isalpha.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_isalpha.c -o ../objs/str/ft_isalpha.o -I ../include
+\033[0;92mCompiling STR: str/ft_isascii.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_isascii.c -o ../objs/str/ft_isascii.o -I ../include
+\033[0;92mCompiling STR: str/ft_isdigit.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_isdigit.c -o ../objs/str/ft_isdigit.o -I ../include
+\033[0;92mCompiling STR: str/ft_isprint.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_isprint.c -o ../objs/str/ft_isprint.o -I ../include
+\033[0;92mCompiling STR: str/ft_itoa.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_itoa.c -o ../objs/str/ft_itoa.o -I ../include
+\033[0;92mCompiling STR: str/ft_split.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_split.c -o ../objs/str/ft_split.o -I ../include
+\033[0;92mCompiling STR: str/ft_strchr.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strchr.c -o ../objs/str/ft_strchr.o -I ../include
+\033[0;92mCompiling STR: str/ft_strdup.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strdup.c -o ../objs/str/ft_strdup.o -I ../include
+\033[0;92mCompiling STR: str/ft_striteri.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_striteri.c -o ../objs/str/ft_striteri.o -I ../include
+\033[0;92mCompiling STR: str/ft_strjoin.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strjoin.c -o ../objs/str/ft_strjoin.o -I ../include
+\033[0;92mCompiling STR: str/ft_strlcat.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strlcat.c -o ../objs/str/ft_strlcat.o -I ../include
+\033[0;92mCompiling STR: str/ft_strlcpy.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strlcpy.c -o ../objs/str/ft_strlcpy.o -I ../include
+\033[0;92mCompiling STR: str/ft_strlen.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strlen.c -o ../objs/str/ft_strlen.o -I ../include
+\033[0;92mCompiling STR: str/ft_strmapi.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strmapi.c -o ../objs/str/ft_strmapi.o -I ../include
+\033[0;92mCompiling STR: str/ft_strncmp.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strncmp.c -o ../objs/str/ft_strncmp.o -I ../include
+\033[0;92mCompiling STR: str/ft_strnstr.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strnstr.c -o ../objs/str/ft_strnstr.o -I ../include
+\033[0;92mCompiling STR: str/ft_strrchr.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strrchr.c -o ../objs/str/ft_strrchr.o -I ../include
+\033[0;92mCompiling STR: str/ft_strtrim.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_strtrim.c -o ../objs/str/ft_strtrim.o -I ../include
+\033[0;92mCompiling STR: str/ft_substr.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_substr.c -o ../objs/str/ft_substr.o -I ../include
+\033[0;92mCompiling STR: str/ft_tolower.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_tolower.c -o ../objs/str/ft_tolower.o -I ../include
+\033[0;92mCompiling STR: str/ft_toupper.c \033[0;39m
+cc -Wall -Wextra -Werror -g  -c str/ft_toupper.c -o ../objs/str/ft_toupper.o -I ../include
+\033[0;95mCreating/Updating archive ../libs/libft.a \033[0;39m
+ar rcs ../libs/libft.a ../objs/io/ft_putchar_fd.o ../objs/io/ft_putendl_fd.o ../objs/io/ft_putnbr_fd.o ../objs/io/ft_putstr_fd.o  ../objs/mem/ft_bzero.o ../objs/mem/ft_calloc.o ../objs/mem/ft_memchr.o ../objs/mem/ft_memcmp.o ../objs/mem/ft_memcpy.o ../objs/mem/ft_memmove.o ../objs/mem/ft_memset.o ../objs/str/ft_atoi.o ../objs/str/ft_isalnum.o ../objs/str/ft_isalpha.o ../objs/str/ft_isascii.o ../objs/str/ft_isdigit.o ../objs/str/ft_isprint.o ../objs/str/ft_itoa.o ../objs/str/ft_split.o ../objs/str/ft_strchr.o ../objs/str/ft_strdup.o ../objs/str/ft_striteri.o ../objs/str/ft_strjoin.o ../objs/str/ft_strlcat.o ../objs/str/ft_strlcpy.o ../objs/str/ft_strlen.o ../objs/str/ft_strmapi.o ../objs/str/ft_strncmp.o ../objs/str/ft_strnstr.o ../objs/str/ft_strrchr.o ../objs/str/ft_strtrim.o ../objs/str/ft_substr.o ../objs/str/ft_tolower.o ../objs/str/ft_toupper.o
+\033[0;95mCreating/Updating archive ../libs/libft.a \033[0;39m

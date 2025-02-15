@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahirzall <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:10:00 by ahirzall          #+#    #+#             */
-/*   Updated: 2024/09/09 17:48:53 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:55:16 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -701,5 +701,8 @@ void				ft_putnbr_fd(int n, int fd);
  * // The result will be "World", a newly allocated string.
  */
 char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				**split_multi(const char *s, const char *delimiters);
+char				*str_tok_stt(char *input, const char *delimiters);
+void				str_nullify_delimiters(char *input, const char *delimiters);
 
 #endif

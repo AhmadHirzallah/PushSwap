@@ -40,7 +40,7 @@ all: $(NAME)
 $(OBJS_DIR)/%.o: $(FT_PRINTF_DIR)/%.c
 	@mkdir -p $(dir $@)
 	@echo "$(GREEN)Compiling: $< $(RESET)"
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDE_DIR)
 
 # Rule to create/update the static library
 $(NAME): $(OBJS)

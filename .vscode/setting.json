@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "C_Cpp.intelliSenseEngine": "Default",
+        "minishell.h": "c",
+        "bit": "c",
+        "*.tcc": "c",
+        "ostream": "c",
+        "streambuf": "c"
+    }
+}
