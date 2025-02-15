@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "circular_list.h": "c",
+        "ft_printf.h": "c"
+    }
+}
