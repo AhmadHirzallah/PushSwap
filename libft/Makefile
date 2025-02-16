@@ -61,6 +61,9 @@ SRCS_STR = $(LIBFT_DIR)/str/ft_atoi.c      \
 			$(LIBFT_DIR)/str/ft_tolower.c   \
 			$(LIBFT_DIR)/str/ft_toupper.c   \
 			$(LIBFT_DIR)/str/split_multi.c  \
+			$(LIBFT_DIR)/str/ft_atol.c  \
+			$(LIBFT_DIR)/str/str_space.c  \
+			$(LIBFT_DIR)/str/str_tok_sttc.c  \
 			$(LIBFT_DIR)/str/str_nullify_delimiters.c
 
 # Combine all source files into one list (for reference)

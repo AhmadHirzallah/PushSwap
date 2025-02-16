@@ -8,7 +8,6 @@ short	prepare_strs_handler(t_utils_helpers *helpers)
 	while(helpers->input[i])
 	{
 		helpers->input[i] = ft_strtrim(helpers->input[i], "\n\t ,;");
-		str_nullify_delimiters(helpers->input[i], "\n\t ,;");
 		i++;
 	}
 	return (0);
@@ -50,26 +49,23 @@ static short	process_tokens_from_str(char *input, t_stack *a)
 {
 	long	nbr;
 	short	validation;
-	size_t i;
+	char	*next_nbr_str;
 
-	i = 0;
-	while (input[i])
+	next_nbr_str = str_tok_sttc(input, " \n\t,;");
+	while (next_nbr_str)
 	{
-		while (input[i] == '\0')
-			++i;
-		if (input[i] == '\0')
-			break;;
-		validation = is_valid_integer_str(&input[i]);
+		validation = is_valid_integer_str(next_nbr_str);
 		if (validation != __SUCC__)
-		nbr = ft_atol(&input[i]);
+			return (validation);
+		nbr = ft_atol(next_nbr_str);
 		validation = run_validation_checks(a, nbr);
 		if (validation != __SUCC__)
 			return (validation);
 		validation = add_into_stack(a, (int)nbr);
 		if (validation != __SUCC__)
 			return (validation);
-		while (input[i] != '\0')
-			++i;
+
+		next_nbr_str = str_tok_sttc(NULL, " \n\t,;");
 	}
 	return (__SUCC__);
 }

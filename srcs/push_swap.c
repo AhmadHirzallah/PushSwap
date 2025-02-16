@@ -14,6 +14,7 @@ static t_stack	*init_stack()
 		return (NULL);
 	return (stack);
 }
+
 static short	init_stacks_a_b(t_stacks *stacks)
 {
 	stacks->a = init_stack();
@@ -27,16 +28,19 @@ static short	init_stacks_a_b(t_stacks *stacks)
 
 
 
-static short	init_helpers(t_utils_helpers *helpers)
+static short	init_helpers(t_utils_helpers **helpers)
 {
-	helpers = ft_calloc(1, sizeof(t_utils_helpers));
-	if (!helpers)
+	*helpers = ft_calloc(1, sizeof(t_utils_helpers));
+	if (!*helpers)
 		return (__HELPERS_MALLOC_FAIL__);
-	dlist_init(helpers->dsply_prnt_hndler.list, NULL);
+	(*helpers)->dsply_prnt_hndler.list = ft_calloc(1, sizeof(t_dlist));
+	if (!(*helpers)->dsply_prnt_hndler.list)
+		return (__HELPERS_MALLOC_FAIL__);
+	dlist_init((*helpers)->dsply_prnt_hndler.list, NULL);
 	return (__SUCC__);
 }
 
-static short	initialize_ps(t_stacks *stacks, t_utils_helpers *helpers)
+static short	initialize_ps(t_stacks **stacks, t_utils_helpers **helpers)
 /*
 			So, after calling ft_calloc, the memory for stacks (of type t_stacks) will look like this:
 			
@@ -50,13 +54,13 @@ static short	initialize_ps(t_stacks *stacks, t_utils_helpers *helpers)
 			But, since a.head and a.tail will point to dynamic list nodes (which themselves are dynamically allocated), you need to separately allocate memory for these nodes.
 */
 {
-	stacks = ft_calloc(1, sizeof(t_stacks));
-	if (!stacks)
+	*stacks = ft_calloc(1, sizeof(t_stacks));
+	if (!*stacks)
 		return (__WRNG_INIT_CALLOC__);
-	helpers = ft_calloc(1, sizeof(t_utils_helpers));
-	if (!helpers)
+	*helpers = ft_calloc(1, sizeof(t_utils_helpers));
+	if (!*helpers)
 		return (__WRNG_INIT_CALLOC__);
-	if (init_stacks_a_b(stacks) != __SUCC__)
+	if (init_stacks_a_b(*stacks) != __SUCC__)
 		return (__STACK_MALLOC_FAIL__);
 	if (init_helpers(helpers) != __SUCC__)
 		return (__HELPERS_MALLOC_FAIL__);
@@ -69,7 +73,7 @@ int	push_swap(int *argc , char **argv[])
 	t_stacks	*stacks;
 	t_utils_helpers *helpers;
 
-	rtrn = initialize_ps(stacks, helpers);
+	rtrn = initialize_ps(&stacks, &helpers);
 	if (rtrn != __SUCC__)
 	{
 		// free_all();
@@ -86,5 +90,7 @@ int	push_swap(int *argc , char **argv[])
 	}
 	prepare_strs_handler(helpers);
 	extract_nbrs_process(stacks, helpers);
+	print_visual_1stack(stacks->a, "Stack A :) :) ");
+	print_visual_2stacks(stacks->a, "A Stack" , stacks->b , "B Stack");
 	return (__SUCC__);
 }

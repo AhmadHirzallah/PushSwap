@@ -6,7 +6,7 @@ static short	check_is_duplicate(t_stack *stack, int nbr)
 	t_list_node	*current;
 	size_t	count;
 
-	if (!stack || !stack->list.head)
+	if (!stack)
 		return (__ERR_IN_LST_DUP_CHCK__);
 	current = stack->list.head;
 	count = stack->list.size;
