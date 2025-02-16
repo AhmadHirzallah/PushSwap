@@ -1,6 +1,6 @@
 # DS/Makefile
 
-NAME        = ../../libs/libft_ds.a
+NAME        = ../../libs/libds.a
 DS_DIR      = .
 OBJS_DIR    = ../../objs/ds
 INCLUDE_DIR = ../../include
@@ -98,7 +98,22 @@ SRCS_CIRC = \
 	$(DS_DIR)/circular_list/circ_lst_rotate.c
 
 
-# Existing pattern rules will handle compilation
+SRCS_CIRC_STACK = \
+        $(DS_DIR)/stack_circular/circ_stack_clear.c \
+        $(DS_DIR)/stack_circular/circ_stack_clone.c \
+        $(DS_DIR)/stack_circular/circ_stack_create.c \
+        $(DS_DIR)/stack_circular/circ_stack_destroy.c \
+        $(DS_DIR)/stack_circular/circ_stack_iter_on_data.c \
+        $(DS_DIR)/stack_circular/circ_stack_peek.c \
+        $(DS_DIR)/stack_circular/circ_stack_pop.c \
+        $(DS_DIR)/stack_circular/circ_stack_push.c \
+        $(DS_DIR)/stack_circular/circ_stack_rotate.c \
+        $(DS_DIR)/stack_circular/circ_stack_size.c \
+        $(DS_DIR)/stack_circular/circ_stack_swap_top2.c \
+        $(DS_DIR)/stack_circular/is_circ_stack_empty.c \
+        $(DS_DIR)/stack_circular/rev_rotate_circ_stack.c \
+        $(DS_DIR)/stack_circular/push_circ_stack_end.c
+
 
 
 
@@ -108,12 +123,13 @@ OBJS_QUEUE = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_QUEUE))
 OBJS_DS  = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_DS))
 OBJS_LST = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_LST))
 OBJS_CIRC = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_CIRC))
+OBJS_CIRC_STACK = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_CIRC_STACK))
 
 # Update the all target
 all: $(NAME)
 
 # Update the library creation rule
-$(NAME): $(OBJS_DS) $(OBJS_LST) $(OBJS_STACK) $(OBJS_QUEUE) $(OBJS_CIRC)
+$(NAME): $(OBJS_DS) $(OBJS_LST) $(OBJS_STACK) $(OBJS_QUEUE) $(OBJS_CIRC) $(OBJS_CIRC_STACK)
 	@mkdir -p $(dir $(NAME))
 	@echo "$(MAGENTA)Creating DS library: $@ $(RESET)"
 	$(AR) $(ARFLAGS) $@ $^

@@ -70,7 +70,9 @@ LIBFT_SRCS = $(SRCS_IO) $(SRCS_LST) $(SRCS_MEM) $(SRCS_STR)
 OBJS_IO  = $(patsubst $(LIBFT_DIR)/io/%.c,$(OBJS_DIR)/io/%.o,$(SRCS_IO))
 OBJS_MEM = $(patsubst $(LIBFT_DIR)/mem/%.c,$(OBJS_DIR)/mem/%.o,$(SRCS_MEM))
 OBJS_STR = $(patsubst $(LIBFT_DIR)/str/%.c,$(OBJS_DIR)/str/%.o,$(SRCS_STR))
+
 OBJECTS  = $(OBJS_IO) $(OBJS_LST) $(OBJS_MEM) $(OBJS_STR)
+
 
 # Default target
 all: $(NAME)
@@ -92,12 +94,6 @@ $(OBJS_DIR)/str/%.o: $(LIBFT_DIR)/str/%.c
 	@echo "$(GREEN)Compiling STR: $< $(RESET)"
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_DIR)
 
-
-
-
-
-
-# Create or update the library archive in libs/
 $(NAME): $(OBJECTS)
 	@mkdir -p $(LIBS_DIR)
 	@echo "$(MAGENTA)Creating/Updating archive $(NAME) $(RESET)"

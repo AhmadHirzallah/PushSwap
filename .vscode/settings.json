@@ -1,0 +1,15 @@
+{
+	"files.associations": {
+		"all_headers.h": "c",
+		"libft.h": "c",
+		"circular_stack.h.h": "c",
+		"stdlib.h": "c",
+		"circular_stack.h": "c",
+		"array": "c",
+		"string": "c",
+		"string_view": "c",
+		"span": "c",
+		"utils.h": "c",
+		"push_swap.h": "c"
+	}
+}

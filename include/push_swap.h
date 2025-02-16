@@ -18,6 +18,10 @@
 # include "push_swap.h"
 # include "utils.h"
 
-int	push_swap(t_stacks *stacks, t_utils_helpers *helpers);
+int	push_swap(int *argc , char **argv[]);
+short	prepare_strs_handler(t_utils_helpers *helpers);
+short	run_validation_checks(t_stack *list, long nbr);
+short	extract_nbrs_process(t_stacks *stacks, t_utils_helpers *helpers);
+void print_visual_stack(t_stack *a);
 
 #endif

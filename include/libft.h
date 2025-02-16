@@ -704,5 +704,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				**split_multi(const char *s, const char *delimiters);
 char				*str_tok_stt(char *input, const char *delimiters);
 void				str_nullify_delimiters(char *input, const char *delimiters);
+char	*str_space(int *chr);
+int	ft_atol(const char *nptr);
 
 #endif
