@@ -20,7 +20,7 @@ void    circ_list_remove_node(t_circular_lst *list, t_list_node *node, void (*de
             list->tail = node->prev;
     }
     if (del)
-        del(node->data);
+        del(node->data_s.data.as_ptr);
     free(node);
     list->size--;
 }

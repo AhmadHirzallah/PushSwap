@@ -17,6 +17,59 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+
+typedef enum e_value_type
+{
+    VAL_PTR,
+    VAL_LONG,
+    VAL_INT,
+    VAL_SHORT,
+    VAL_CHAR,
+    VAL_ULONG,
+    VAL_UINT,
+    VAL_USHORT,
+    VAL_UCHAR,
+    VAL_FLOAT,
+    VAL_DOUBLE,
+    VAL_INVALID
+}   t_value_type;
+
+
+typedef union u_value_data
+{
+    size_t          as_size_t;
+
+    void            *as_ptr;
+
+    long            as_long;
+
+    int             as_int;
+
+    short           as_short;
+
+    char            as_char;
+
+    unsigned long   as_ulong;
+
+    unsigned int    as_uint;
+
+    unsigned short  as_ushort;
+
+    unsigned char   as_uchar;
+
+    float           as_float;
+
+    double          as_double;
+}   t_value_data;
+
+
+typedef struct s_value
+{
+    t_value_type    type;
+    t_value_data    data;
+}   t_value;
+
+
 typedef struct s_list
 {
 	void			*content;
@@ -705,6 +758,9 @@ char				**split_multi(const char *s, const char *delimiters);
 char	*str_tok_sttc(char *str, const char *delimiters);
 void				str_nullify_delimiters(char *input, const char *delimiters);
 int	ft_atol(const char *nptr);
-short	str_space(int chr);
+short	is_str_space(int chr);
+__int128 ft_atoint128(const char *nptr);
+char *nbr_to_str(__int128_t nbr);
+
 
 #endif

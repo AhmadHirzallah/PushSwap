@@ -10,6 +10,7 @@
 		"string_view": "c",
 		"span": "c",
 		"utils.h": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"circular_list.h": "c"
 	}
 }

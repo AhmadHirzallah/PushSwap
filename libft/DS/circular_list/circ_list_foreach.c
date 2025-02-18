@@ -12,7 +12,7 @@ void    circ_list_foreach(t_circular_lst *list, void (*f)(void *))
     i = 0;
     while (i++ < list->size)
     {
-        f(current->data);
+        f(current->data_s.data.as_ptr);
         current = current->next;
     }
 }

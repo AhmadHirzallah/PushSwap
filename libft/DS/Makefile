@@ -1,143 +1,120 @@
-# DS/Makefile
+# ============================================================================ #
+#                                DS Module Makefile                          #
+# ============================================================================ #
 
-NAME        = ../../libs/libds.a
-DS_DIR      = .
-OBJS_DIR    = ../../objs/ds
-INCLUDE_DIR = ../../include
+# Library Output
+NAME        := ../../libs/libds.a
 
-CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -g
-AR          = ar
-ARFLAGS     = rcs
+# Directories
+DS_ROOT     := .
+OBJS_DIR    := ../../objs/ds
+INCLUDE_DIR := ../../include
 
-# Color definitions
-RESET       = \033[0;39m
-GREEN       = \033[0;92m
-MAGENTA     = \033[0;95m
-YELLOW      = \033[0;93m
+# Toolchain
+CC          := cc
+CFLAGS      := -Wall -Wextra -Werror -g
+AR          := ar
+ARFLAGS     := rcs
 
-# Source files
-SRCS_DS = \
-	$(DS_DIR)/dlist/dlist_back.c \
-	$(DS_DIR)/dlist/dlist_clear.c \
-	$(DS_DIR)/dlist/dlist_del_end.c \
-	$(DS_DIR)/dlist/dlist_del_front.c \
-	$(DS_DIR)/dlist/dlist_del_node.c \
-	$(DS_DIR)/dlist/dlist_destroy.c \
-	$(DS_DIR)/dlist/is_dlist_empty.c \
-	$(DS_DIR)/dlist/dlist_find_node.c \
-	$(DS_DIR)/dlist/dlist_foreach_on_data.c \
-	$(DS_DIR)/dlist/dlist_front.c \
-	$(DS_DIR)/dlist/dlist_init.c \
-	$(DS_DIR)/dlist/dlist_insert_after.c \
-	$(DS_DIR)/dlist/dlist_insert_before.c \
-	$(DS_DIR)/dlist/dlist_insert_begining.c \
-	$(DS_DIR)/dlist/dlist_insert_end.c \
-	$(DS_DIR)/dlist/dlist_merge.c \
-	$(DS_DIR)/dlist/dlist_remove_node.c \
-	$(DS_DIR)/dlist/dlist_reverse.c \
-	$(DS_DIR)/dlist/dlist_size.c
+# Color Definitions
+RESET       := \033[0m
+GREEN       := \033[0;92m
+MAGENTA     := \033[0;95m
+YELLOW      := \033[0;93m
 
-SRCS_LST = \
-	$(DS_DIR)/lst/ft_lstnew_bonus.c \
-	$(DS_DIR)/lst/ft_lstadd_front_bonus.c \
-	$(DS_DIR)/lst/ft_lstsize_bonus.c \
-	$(DS_DIR)/lst/ft_lstlast_bonus.c \
-	$(DS_DIR)/lst/ft_lstadd_back_bonus.c \
-	$(DS_DIR)/lst/ft_lstdelone_bonus.c \
-	$(DS_DIR)/lst/ft_lstclear_bonus.c \
-	$(DS_DIR)/lst/ft_lstiter_bonus.c \
-	$(DS_DIR)/lst/ft_lstmap_bonus.c
+# ============================================================================ #
+#                                File Lists                                  #
+# ============================================================================ #
 
+# DList Files
+FILES_DLIST := dlist/dlist_back     dlist/dlist_clear    dlist/dlist_del_end \
+               dlist/dlist_del_front dlist/dlist_del_node dlist/dlist_destroy \
+               dlist/is_dlist_empty  dlist/dlist_find_node dlist/dlist_foreach_on_data \
+               dlist/dlist_front     dlist/dlist_init     dlist/dlist_insert_after \
+               dlist/dlist_insert_before dlist/dlist_insert_begining dlist/dlist_insert_end \
+               dlist/dlist_merge     dlist/dlist_remove_node dlist/dlist_reverse \
+               dlist/dlist_size
 
+# List Files
+FILES_LST   := lst/ft_lstnew_bonus        lst/ft_lstadd_front_bonus  \
+               lst/ft_lstsize_bonus       lst/ft_lstlast_bonus       \
+               lst/ft_lstadd_back_bonus   lst/ft_lstdelone_bonus     \
+               lst/ft_lstclear_bonus      lst/ft_lstiter_bonus       \
+               lst/ft_lstmap_bonus
 
-# Stack sources
-SRCS_STACK = \
-	$(DS_DIR)/stack/is_stack_empty.c \
-	$(DS_DIR)/stack/stack_clear.c \
-	$(DS_DIR)/stack/stack_clone.c \
-	$(DS_DIR)/stack/stack_create.c \
-	$(DS_DIR)/stack/stack_destroy.c \
-	$(DS_DIR)/stack/stack_iter_on_data.c \
-	$(DS_DIR)/stack/stack_peek.c \
-	$(DS_DIR)/stack/stack_pop.c \
-	$(DS_DIR)/stack/stack_push.c \
-	$(DS_DIR)/stack/stack_size.c
+# Stack Files
+FILES_STACK := stack/is_stack_empty       stack/stack_clear      \
+               stack/stack_clone          stack/stack_create     \
+               stack/stack_destroy        stack/stack_iter_on_data \
+               stack/stack_peek           stack/stack_pop        \
+               stack/stack_push           stack/stack_size
 
-# Queue sources
-SRCS_QUEUE = \
-	$(DS_DIR)/queue/dequeue.c \
-	$(DS_DIR)/queue/enqueue.c \
-	$(DS_DIR)/queue/is_queue_empty.c \
-	$(DS_DIR)/queue/is_queue_full.c \
-	$(DS_DIR)/queue/queue_clear.c \
-	$(DS_DIR)/queue/queue_create.c \
-	$(DS_DIR)/queue/queue_destroy.c \
-	$(DS_DIR)/queue/queue_front.c \
-	$(DS_DIR)/queue/queue_iter.c \
-	$(DS_DIR)/queue/queue_rear.c \
-	$(DS_DIR)/queue/queue_size.c \
-	$(DS_DIR)/queue/queue_split.c
+# Queue Files
+FILES_QUEUE := queue/dequeue            queue/enqueue          \
+               queue/is_queue_empty     queue/is_queue_full    \
+               queue/queue_clear        queue/queue_create     \
+               queue/queue_destroy      queue/queue_front      \
+               queue/queue_iter         queue/queue_rear       \
+               queue/queue_size         queue/queue_split
 
+# Circular List Files
+FILES_CIRC  := circular_list/circ_list_swap_first_2 circular_list/circ_list_clear \
+               circular_list/circ_list_foreach        circular_list/circ_list_front \
+               circular_list/circ_list_init           circular_list/circ_list_insert_beginning \
+               circular_list/circ_list_insert_end      circular_list/circ_list_is_empty \
+               circular_list/circ_list_remove_node     circular_list/circ_list_size \
+               circular_list/circ_lst_push_front_into_other \
+               circular_list/circ_lst_rev_rotate       circular_list/circ_lst_rotate
 
+# Circular Stack Files
+FILES_CIRC_STACK := stack_circular/circ_stack_clear  stack_circular/circ_stack_clone \
+                    stack_circular/circ_stack_create stack_circular/circ_stack_destroy \
+                    stack_circular/circ_stack_iter_on_data stack_circular/circ_stack_peek \
+                    stack_circular/circ_stack_pop    stack_circular/circ_stack_push \
+                    stack_circular/circ_stack_rotate stack_circular/circ_stack_size \
+                    stack_circular/circ_stack_swap_top2 stack_circular/is_circ_stack_empty \
+                    stack_circular/rev_rotate_circ_stack stack_circular/push_circ_stack_end
 
-# Circular list source files
-SRCS_CIRC = \
-	$(DS_DIR)/circular_list/circ_list_swap_first_2.c \
-	$(DS_DIR)/circular_list/circ_list_clear.c \
-	$(DS_DIR)/circular_list/circ_list_foreach.c \
-	$(DS_DIR)/circular_list/circ_list_front.c \
-	$(DS_DIR)/circular_list/circ_list_init.c \
-	$(DS_DIR)/circular_list/circ_list_insert_beginning.c \
-	$(DS_DIR)/circular_list/circ_list_insert_end.c \
-	$(DS_DIR)/circular_list/circ_list_is_empty.c \
-	$(DS_DIR)/circular_list/circ_list_remove_node.c \
-	$(DS_DIR)/circular_list/circ_list_size.c \
-	$(DS_DIR)/circular_list/circ_lst_push_front_into_other.c \
-	$(DS_DIR)/circular_list/circ_lst_rev_rotate.c \
-	$(DS_DIR)/circular_list/circ_lst_rotate.c
+# ============================================================================ #
+#                             Path Construction                                #
+# ============================================================================ #
 
+# Build full source paths (adding .c extension)
+SRC_DLIST      := $(addprefix $(DS_ROOT)/, $(addsuffix .c, $(FILES_DLIST)))
+SRC_LST        := $(addprefix $(DS_ROOT)/, $(addsuffix .c, $(FILES_LST)))
+SRC_STACK      := $(addprefix $(DS_ROOT)/, $(addsuffix .c, $(FILES_STACK)))
+SRC_QUEUE      := $(addprefix $(DS_ROOT)/, $(addsuffix .c, $(FILES_QUEUE)))
+SRC_CIRC       := $(addprefix $(DS_ROOT)/, $(addsuffix .c, $(FILES_CIRC)))
+SRC_CIRC_STACK := $(addprefix $(DS_ROOT)/, $(addsuffix .c, $(FILES_CIRC_STACK)))
 
-SRCS_CIRC_STACK = \
-        $(DS_DIR)/stack_circular/circ_stack_clear.c \
-        $(DS_DIR)/stack_circular/circ_stack_clone.c \
-        $(DS_DIR)/stack_circular/circ_stack_create.c \
-        $(DS_DIR)/stack_circular/circ_stack_destroy.c \
-        $(DS_DIR)/stack_circular/circ_stack_iter_on_data.c \
-        $(DS_DIR)/stack_circular/circ_stack_peek.c \
-        $(DS_DIR)/stack_circular/circ_stack_pop.c \
-        $(DS_DIR)/stack_circular/circ_stack_push.c \
-        $(DS_DIR)/stack_circular/circ_stack_rotate.c \
-        $(DS_DIR)/stack_circular/circ_stack_size.c \
-        $(DS_DIR)/stack_circular/circ_stack_swap_top2.c \
-        $(DS_DIR)/stack_circular/is_circ_stack_empty.c \
-        $(DS_DIR)/stack_circular/rev_rotate_circ_stack.c \
-        $(DS_DIR)/stack_circular/push_circ_stack_end.c
+# Aggregate DS sources
+SRCS_DS := $(SRC_DLIST) $(SRC_LST) $(SRC_STACK) $(SRC_QUEUE) $(SRC_CIRC) $(SRC_CIRC_STACK)
 
+# Generate corresponding object paths
+OBJS_DS := $(patsubst $(DS_ROOT)/%.c, $(OBJS_DIR)/%.o, $(SRCS_DS))
 
+# ============================================================================ #
+#                                Build Rules                                 #
+# ============================================================================ #
 
+.PHONY: all clean fclean re bonus
 
-
-OBJS_STACK = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_STACK))
-OBJS_QUEUE = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_QUEUE))
-OBJS_DS  = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_DS))
-OBJS_LST = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_LST))
-OBJS_CIRC = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_CIRC))
-OBJS_CIRC_STACK = $(patsubst $(DS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS_CIRC_STACK))
-
-# Update the all target
 all: $(NAME)
 
-# Update the library creation rule
-$(NAME): $(OBJS_DS) $(OBJS_LST) $(OBJS_STACK) $(OBJS_QUEUE) $(OBJS_CIRC) $(OBJS_CIRC_STACK)
-	@mkdir -p $(dir $(NAME))
-	@echo "$(MAGENTA)Creating DS library: $@ $(RESET)"
-	$(AR) $(ARFLAGS) $@ $^
+bonus: all
 
-$(OBJS_DIR)/%.o: $(DS_DIR)/%.c
+
+$(NAME): $(OBJS_DS)
+	@mkdir -p $(dir $(NAME))
+	@echo "$(MAGENTA)Creating DS library: $(NAME)$(RESET)"
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS_DS)
+	@echo "$(MAGENTA)DS library created: $(NAME)$(RESET)"
+
+# Generic compilation rule for DS sources
+$(OBJS_DIR)/%.o: $(DS_ROOT)/%.c
 	@mkdir -p $(dir $@)
 	@echo "$(GREEN)Compiling DS: $< $(RESET)"
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_DIR)
+	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 clean:
 	@echo "$(YELLOW)Cleaning DS objects...$(RESET)"
@@ -149,4 +126,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

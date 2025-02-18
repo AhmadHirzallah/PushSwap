@@ -1,46 +1,61 @@
+# ============================================================================ #
+#                           GET_NEXT_LINE Module Makefile                    #
+# ============================================================================ #
+
+# Library Output
+NAME        := ../../../libs/libgnl.a
+
 # Directories
-GNL_DIR       = .
-OBJS_DIR      = ../../../objs/get_next_line
-LIBS_DIR      = ../../../libs
-INCLUDE_DIR   = ../../../include
+GNL_ROOT    := .
+OBJS_DIR    := ../../../objs/get_next_line
+INCLUDE_DIR := ../../../include
 
-# Static Library Name
-NAME = $(LIBS_DIR)/libgnl.a
+# Toolchain
+CC          := cc
+CFLAGS      := -Wall -Wextra -Werror -g
+ARCHIVE_CREATE := ar rcs
 
-# Compiler and Flags
-CC     = cc
-CFLAGS = -Wall -Wextra -Werror -g
-ARCHIVE_CREATE     = ar rcs
+# Color Definitions
+RESET       := \033[0m
+GREEN       := \033[0;92m
+MAGENTA     := \033[0;95m
+YELLOW      := \033[0;93m
 
-# Color Formatting for Messages
-RESET  = \033[0;39m
-GREEN  = \033[0;92m
-YELLOW = \033[0;93m
-MAGENTA = \033[0;95m
+# ============================================================================ #
+#                                File Lists                                    #
+# ============================================================================ #
 
-# Source files inside get_next_line/
-SRCS = $(GNL_DIR)/get_next_line.c \
-       $(GNL_DIR)/get_next_line_utils.c
+FILES := get_next_line get_next_line_utils
 
-# Convert source files to object files, maintaining directory structure
-OBJS = $(patsubst $(GNL_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS))
+# ============================================================================ #
+#                             Path Construction                                #
+# ============================================================================ #
 
-# Default Target
+# Full source file paths (with .c extension)
+SRCS := $(addprefix $(GNL_ROOT)/, $(addsuffix .c, $(FILES)))
+
+# Corresponding object file paths (with .o extension)
+OBJS := $(patsubst $(GNL_ROOT)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
+
+# ============================================================================ #
+#                                Build Rules                                   #
+# ============================================================================ #
+
+.PHONY: all clean fclean re bonus
+
 all: $(NAME)
 
-# Rule to compile object files
-$(OBJS_DIR)/%.o: $(GNL_DIR)/%.c
+$(NAME): $(OBJS)
+	@mkdir -p $(dir $(NAME))
+	@echo "$(MAGENTA)Creating/Updating archive $(NAME)$(RESET)"
+	$(ARCHIVE_CREATE) $(NAME) $(OBJS)
+	@echo "$(MAGENTA)Library created: $(NAME)$(RESET)"
+
+# Generic rule for compiling get_next_line sources
+$(OBJS_DIR)/%.o: $(GNL_ROOT)/%.c
 	@mkdir -p $(dir $@)
 	@echo "$(GREEN)Compiling: $< $(RESET)"
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_DIR)
-
-# Rule to create/update the static library
-$(NAME): $(OBJS)
-	@mkdir -p $(LIBS_DIR)
-	@echo "$(MAGENTA)Creating/Updating archive $(NAME) $(RESET)"
-	$(ARCHIVE_CREATE) $(NAME) $(OBJS)
-
-bonus: all
+	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 clean:
 	@echo "$(YELLOW)Cleaning objects in $(OBJS_DIR)...$(RESET)"
@@ -48,8 +63,10 @@ clean:
 
 fclean: clean
 	@echo "$(YELLOW)Removing archive $(NAME)...$(RESET)"
-	@rm -rf $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+bonus: all
+
+.PHONY: all clean fclean re

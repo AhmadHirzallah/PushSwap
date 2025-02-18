@@ -11,7 +11,7 @@ void *pop_circ_stack(t_stack *s)
         return NULL;
     }
 	node = s->list.head;
-    data = node->data;
+    data = node->data_s.data.as_ptr;
     circ_list_remove_node(&s->list, node, NULL); // Do not delete data
     return data;
 }

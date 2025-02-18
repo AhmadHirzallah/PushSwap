@@ -1,109 +1,95 @@
-# Directories (relative to this Makefile's location, i.e. libft/)
-LIBFT_DIR    = .
-OBJS_DIR     = ../objs
-LIBS_DIR     = ../libs
-INCLUDE_DIR  = ../include
+# **************************************************************************** #
+#                                LIBFT Makefile                                #
+# **************************************************************************** #
 
-# Final archive target (placed in the project root's libs/)
-NAME         = $(LIBS_DIR)/libft.a
+# === Directories (relative to this Makefile's location) ===
+LIBFT_DIR    := .
+OBJS_DIR     := ../objs
+LIBS_DIR     := ../libs
+INCLUDE_DIR  := ../include
 
-# Compiler settings
-CC           = cc
-CFLAGS       = -Wall -Wextra -Werror -g 
-AR           = ar
+# === Final Archive Target (placed in the project root's libs/) ===
+NAME         := $(LIBS_DIR)/libft.a
 
-# Color definitions for messages
-RESET        = \033[0;39m
-RED          = \033[0;91m
-GREEN        = \033[0;92m
-MAGENTA      = \033[0;95m
-YELLOW       = \033[0;93m
+# === Compiler Settings ===
+CC           := cc
+CFLAGS       := -Wall -Wextra -Werror -g
+ARCHIVING           := ar rcs
 
-# Explicit source file lists per module
+# === Color Definitions for Messages ===
+RESET        := \033[0;39m
+RED          := \033[0;91m
+GREEN        := \033[0;92m
+MAGENTA      := \033[0;95m
+YELLOW       := \033[0;93m
 
-# I/O functions (in libft/io/)
-SRCS_IO  = $(LIBFT_DIR)/io/ft_putchar_fd.c \
-           $(LIBFT_DIR)/io/ft_putendl_fd.c   \
-           $(LIBFT_DIR)/io/ft_putnbr_fd.c    \
-           $(LIBFT_DIR)/io/ft_putstr_fd.c
+# === Base Filenames (without extensions) ===
 
-# Memory functions (in libft/mem/)
-SRCS_MEM = $(LIBFT_DIR)/mem/ft_bzero.c    \
-           $(LIBFT_DIR)/mem/ft_calloc.c   \
-           $(LIBFT_DIR)/mem/ft_memchr.c   \
-           $(LIBFT_DIR)/mem/ft_memcmp.c   \
-           $(LIBFT_DIR)/mem/ft_memcpy.c   \
-           $(LIBFT_DIR)/mem/ft_memmove.c  \
-           $(LIBFT_DIR)/mem/ft_memset.c
+# I/O Functions (located in libft/io/)
+FILES_IO   := ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
 
-# String functions (in libft/str/)
-SRCS_STR = $(LIBFT_DIR)/str/ft_atoi.c      \
-			$(LIBFT_DIR)/str/ft_isalnum.c   \
-			$(LIBFT_DIR)/str/ft_isalpha.c   \
-			$(LIBFT_DIR)/str/ft_isascii.c   \
-			$(LIBFT_DIR)/str/ft_isdigit.c   \
-			$(LIBFT_DIR)/str/ft_isprint.c   \
-			$(LIBFT_DIR)/str/ft_itoa.c      \
-			$(LIBFT_DIR)/str/ft_split.c     \
-			$(LIBFT_DIR)/str/ft_strchr.c    \
-			$(LIBFT_DIR)/str/ft_strdup.c    \
-			$(LIBFT_DIR)/str/ft_striteri.c  \
-			$(LIBFT_DIR)/str/ft_strjoin.c   \
-			$(LIBFT_DIR)/str/ft_strlcat.c   \
-			$(LIBFT_DIR)/str/ft_strlcpy.c   \
-			$(LIBFT_DIR)/str/ft_strlen.c    \
-			$(LIBFT_DIR)/str/ft_strmapi.c   \
-			$(LIBFT_DIR)/str/ft_strncmp.c   \
-			$(LIBFT_DIR)/str/ft_strnstr.c   \
-			$(LIBFT_DIR)/str/ft_strrchr.c   \
-			$(LIBFT_DIR)/str/ft_strtrim.c   \
-			$(LIBFT_DIR)/str/ft_substr.c    \
-			$(LIBFT_DIR)/str/ft_tolower.c   \
-			$(LIBFT_DIR)/str/ft_toupper.c   \
-			$(LIBFT_DIR)/str/split_multi.c  \
-			$(LIBFT_DIR)/str/ft_atol.c  \
-			$(LIBFT_DIR)/str/str_space.c  \
-			$(LIBFT_DIR)/str/str_tok_sttc.c  \
-			$(LIBFT_DIR)/str/str_nullify_delimiters.c
+# Memory Functions (located in libft/mem/)
+FILES_MEM  := ft_bzero ft_calloc ft_memchr ft_memcmp ft_memcpy ft_memmove ft_memset
 
-# Combine all source files into one list (for reference)
-LIBFT_SRCS = $(SRCS_IO) $(SRCS_LST) $(SRCS_MEM) $(SRCS_STR)
+# String Functions (located in libft/str/)
+FILES_STR  := ft_atoi ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint \
+              ft_itoa ft_split ft_strchr ft_strdup ft_striteri ft_strjoin ft_strlcat \
+              ft_strlcpy ft_strlen ft_strmapi ft_strncmp ft_strnstr ft_strrchr \
+              ft_strtrim ft_substr ft_tolower ft_toupper split_multi ft_atol \
+              is_str_space str_tok_sttc str_nullify_delimiters ft_atoint128 nbr_to_str
 
-# Compute corresponding object file lists (preserving module structure)
-OBJS_IO  = $(patsubst $(LIBFT_DIR)/io/%.c,$(OBJS_DIR)/io/%.o,$(SRCS_IO))
-OBJS_MEM = $(patsubst $(LIBFT_DIR)/mem/%.c,$(OBJS_DIR)/mem/%.o,$(SRCS_MEM))
-OBJS_STR = $(patsubst $(LIBFT_DIR)/str/%.c,$(OBJS_DIR)/str/%.o,$(SRCS_STR))
+FILES_DATA_TYPES := data_types
 
-OBJECTS  = $(OBJS_IO) $(OBJS_LST) $(OBJS_MEM) $(OBJS_STR)
+# === Construct Source File Paths using addprefix & addsuffix ===
+SRCS_IO   := $(addprefix $(LIBFT_DIR)/io/, $(addsuffix .c, $(FILES_IO)))
+SRCS_MEM  := $(addprefix $(LIBFT_DIR)/mem/, $(addsuffix .c, $(FILES_MEM)))
+SRCS_STR  := $(addprefix $(LIBFT_DIR)/str/, $(addsuffix .c, $(FILES_STR)))
+SRCS_DATA_TYPES  := $(addprefix $(LIBFT_DIR)/data_types/, $(addsuffix .c, $(FILES_DATA_TYPES)))
 
+# All source files (for reference)
+SRCS      := $(SRCS_IO) $(SRCS_MEM) $(SRCS_STR)
 
-# Default target
+# === Construct Object File Paths ===
+OBJS_IO   := $(patsubst $(LIBFT_DIR)/io/%.c, $(OBJS_DIR)/io/%.o, $(SRCS_IO))
+OBJS_MEM  := $(patsubst $(LIBFT_DIR)/mem/%.c, $(OBJS_DIR)/mem/%.o, $(SRCS_MEM))
+OBJS_STR  := $(patsubst $(LIBFT_DIR)/str/%.c, $(OBJS_DIR)/str/%.o, $(SRCS_STR))
+OBJS_DATA_TYPES  := $(patsubst $(LIBFT_DIR)/data_types/%.c, $(OBJS_DIR)/data_types/%.o, $(SRCS_DATA_TYPES))
+
+OBJS      := $(OBJS_IO) $(OBJS_MEM) $(OBJS_STR) $(OBJS_DATA_TYPES)
+
+# === Build Rules ===
+.PHONY: all clean fclean re bonus
+
 all: $(NAME)
 
-# Pattern rules for compiling object files
+$(NAME): $(OBJS)
+	@mkdir -p $(LIBS_DIR)
+	@echo "$(MAGENTA)Creating/Updating archive $(NAME)$(RESET)"
+	$(ARCHIVING) $(NAME) $(OBJS)
+	@echo "$(MAGENTA)Archive updated: $(NAME)$(RESET)"
+
+# --- Pattern Rule: I/O Sources ---
 $(OBJS_DIR)/io/%.o: $(LIBFT_DIR)/io/%.c
 	@mkdir -p $(dir $@)
 	@echo "$(GREEN)Compiling I/O: $< $(RESET)"
-	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDE_DIR)
+	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
-
+# --- Pattern Rule: Memory Sources ---
 $(OBJS_DIR)/mem/%.o: $(LIBFT_DIR)/mem/%.c
 	@mkdir -p $(dir $@)
 	@echo "$(GREEN)Compiling MEM: $< $(RESET)"
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_DIR)
+	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
+# --- Pattern Rule: String Sources ---
 $(OBJS_DIR)/str/%.o: $(LIBFT_DIR)/str/%.c
 	@mkdir -p $(dir $@)
 	@echo "$(GREEN)Compiling STR: $< $(RESET)"
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_DIR)
+	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
-$(NAME): $(OBJECTS)
-	@mkdir -p $(LIBS_DIR)
-	@echo "$(MAGENTA)Creating/Updating archive $(NAME) $(RESET)"
-	$(AR) rcs $(NAME) $(OBJECTS)
-	@echo "$(MAGENTA)Creating/Updating archive $(NAME) $(RESET)"
-
-bonus: all
+$(OBJS_DIR)/data_types/%.o: $(LIBFT_DIR)/data_types/%.c
+	@mkdir -p $(dir $@)
+	@echo "$(GREEN)Compiling Data Types: $< $(RESET)"
+	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 clean:
 	@echo "$(YELLOW)Cleaning objects in $(OBJS_DIR)...$(RESET)"
@@ -111,8 +97,10 @@ clean:
 
 fclean: clean
 	@echo "$(YELLOW)Removing archive $(NAME)...$(RESET)"
-	@rm -rf $(NAME)  $(LIBS_DIR)
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+bonus: all
+
+.PHONY: all clean fclean re bonus

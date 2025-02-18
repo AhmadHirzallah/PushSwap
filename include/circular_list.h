@@ -14,10 +14,11 @@
 # define CIRCULAR_LIST_H
 
 # include <stddef.h>
+# include "libft.h"
 
 typedef struct t_list_node
 {
-	void				*data;
+	t_value					data_s;
 	struct t_list_node	*next;
 	struct t_list_node	*prev;
 	long				index;

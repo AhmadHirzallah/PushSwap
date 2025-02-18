@@ -7,7 +7,10 @@ SRCDIR      := .
 OBJDIR      := ../objs/srcs
 
 
-SRCS        := main.c print_to_visualize.c processing_input.c push_swap.c validation_checks.c
+SRCS        := main.c print_to_visualize.c processing_input.c push_swap.c \
+				validation_checks.c flags_manipulation.c terminate_pushswap.c
+
+
 OBJS        := $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 TARGET      := ../push_swap

@@ -12,6 +12,7 @@ static t_stack	*init_stack()
 	stack = ft_calloc(1, sizeof(t_stack));
 	if (!stack)
 		return (NULL);
+	stack->del = del_node_data;
 	return (stack);
 }
 
@@ -73,23 +74,22 @@ int	push_swap(int *argc , char **argv[])
 	t_stacks	*stacks;
 	t_utils_helpers *helpers;
 
+	if (!argv[0][0])
+		return (__WRNG_ARGS_NBR__);
 	rtrn = initialize_ps(&stacks, &helpers);
 	if (rtrn != __SUCC__)
 	{
-		// free_all();
+		terminate_ps(stacks, helpers);
 		return (rtrn);
 	}
 	helpers->input_size = (long)(--(*argc));
 	helpers->input = ++(*argv);
 	if (argc == 0)
 		return (__WRNG_ARGS_NBR__);
-	if (!argv[0][0])
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (__WRNG_ARGS_NBR__);
-	}
 	prepare_strs_handler(helpers);
-	extract_nbrs_process(stacks, helpers);
+	rtrn = extract_nbrs_process(stacks, helpers);
+	if (rtrn != __SUCC__)
+		return (rtrn);
 	print_visual_1stack(stacks->a, "Stack A :) :) ");
 	print_visual_2stacks(stacks->a, "A Stack" , stacks->b , "B Stack");
 	return (__SUCC__);

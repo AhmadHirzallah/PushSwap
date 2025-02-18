@@ -11,7 +11,7 @@ short stack_iter_on_data(t_stack *s, int (*f)(void *))
 	current = s->list.head;
     size_t i = 0;
     while (i < s->list.size) {
-        if (f(current->data) != 0)
+        if (f(current->data_s.data.as_ptr) != 0)
             return 1;
         current = current->next;
         i++;

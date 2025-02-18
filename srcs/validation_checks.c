@@ -12,19 +12,16 @@ static short	check_is_duplicate(t_stack *stack, int nbr)
 	count = stack->list.size;
 	while (count--)
 	{
-		if (*(int *)current->data == nbr)
+		if (*(int *)current->data_s.data.as_ptr == nbr)
 			return (__ERR_THERE_IS_DUPLIC__);
 		current = current->next;
 	}
 	return (__SUCC__);
 }
 
-short	run_validation_checks(t_stack *list, long nbr)
+short	run_validation_checks(t_stack *list, __int128_t nbr)
 {
-	if (nbr > INT_MAX && nbr < INT_MIN)
-	{
-		ft_putstr_fd("Error\n", 2);
+	if (nbr > INT_MAX || nbr < INT_MIN)
 		return (__WRNG_INT_RANGE__);
-	}
 	return (check_is_duplicate(list, (int)nbr));
 }

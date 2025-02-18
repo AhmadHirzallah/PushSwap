@@ -8,7 +8,7 @@ int     circ_list_insert_beginning(t_circular_lst *list, void *data)
     new_node = malloc(sizeof(t_list_node));
     if (!new_node)
         return (-1);
-    new_node->data = data;
+    new_node->data_s.data.as_ptr = data;
     if (list->size == 0)
     {
         new_node->next = new_node;

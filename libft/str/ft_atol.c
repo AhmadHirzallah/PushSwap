@@ -9,7 +9,7 @@ int	ft_atol(const char *nptr)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str_space(nptr[i]))
+	while (is_str_space(nptr[i]))
 		i++;
 	if ((nptr[i] == '+') || (nptr[i] == '-'))
 	{

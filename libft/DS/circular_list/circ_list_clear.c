@@ -15,7 +15,7 @@ void    circ_list_clear(t_circular_lst *list, void (*del)(void *))
     {
         next = current->next;
         if (del)
-            del(current->data);
+            del(current->data_s.data.as_ptr);
         free(current);
         current = next;
     }

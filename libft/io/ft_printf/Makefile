@@ -1,55 +1,64 @@
+# ============================================================================ #
+#                             FT_PRINTF Module Makefile                      #
+# ============================================================================ #
+
+# Library Output
+NAME        := ../../../libs/libftprintf.a
+
 # Directories
-FT_PRINTF_DIR = .
-OBJS_DIR      = ../../../objs/ft_printf
-LIBS_DIR      = ../../../libs
-INCLUDE_DIR   = ../../../include
+FT_PRINTF_ROOT := .
+OBJS_DIR       := ../../../objs/ft_printf
+INCLUDE_DIR    := ../../../include
 
-# Static Library Name
-NAME = $(LIBS_DIR)/libftprintf.a
+# Toolchain
+CC          := cc
+CFLAGS      := -Wall -Wextra -Werror -g
+ARCHIVE_CREATE := ar rcs
 
-# Compiler and Flags
-CC     = cc
-CFLAGS = -Wall -Wextra -Werror -g
-ARCHIVE_CREATE     = ar rcs
+# Color Definitions
+RESET       := \033[0m
+GREEN       := \033[0;92m
+MAGENTA     := \033[0;95m
+YELLOW      := \033[0;93m
 
-# Color Formatting for Messages
-RESET  = \033[0;39m
-GREEN  = \033[0;92m
-YELLOW = \033[0;93m
-MAGENTA = \033[0;95m
+# ============================================================================ #
+#                                File Lists                                    #
+# ============================================================================ #
 
-# Source files inside ft_printf/
-SRCS = $(FT_PRINTF_DIR)/ft_flush_buffer.c \
-       $(FT_PRINTF_DIR)/ft_itoa_base_into_bfr.c \
-       $(FT_PRINTF_DIR)/ft_parse_fmt.c \
-       $(FT_PRINTF_DIR)/ft_printf.c \
-       $(FT_PRINTF_DIR)/ft_render_char_to_buf.c \
-       $(FT_PRINTF_DIR)/ft_render_into_buffer.c \
-       $(FT_PRINTF_DIR)/ft_render_nbrs_to_buf.c \
-       $(FT_PRINTF_DIR)/ft_render_str_to_buf.c \
-       $(FT_PRINTF_DIR)/ft_set_pad_spaces_nbr_cases.c \
-       $(FT_PRINTF_DIR)/ft_set_pad_zeros_nbr_cases.c
+FILES := ft_flush_buffer      ft_itoa_base_into_bfr  ft_parse_fmt \
+         ft_printf            ft_render_char_to_buf   ft_render_into_buffer \
+         ft_render_nbrs_to_buf  ft_render_str_to_buf    ft_set_pad_spaces_nbr_cases \
+         ft_set_pad_zeros_nbr_cases
 
-# Convert source files to object files, maintaining directory structure
-OBJS = $(patsubst $(FT_PRINTF_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS))
+# ============================================================================ #
+#                             Path Construction                                #
+# ============================================================================ #
 
-# Default Target
+# Full source file paths (adding .c extension)
+SRCS := $(addprefix $(FT_PRINTF_ROOT)/, $(addsuffix .c, $(FILES)))
+
+# Corresponding object file paths (adding .o extension)
+OBJS := $(patsubst $(FT_PRINTF_ROOT)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
+
+# ============================================================================ #
+#                                Build Rules                                   #
+# ============================================================================ #
+
+.PHONY: all clean fclean re bonus
+
 all: $(NAME)
 
-# Rule to compile object files
-$(OBJS_DIR)/%.o: $(FT_PRINTF_DIR)/%.c
+$(NAME): $(OBJS)
+	@mkdir -p $(dir $(NAME))
+	@echo "$(MAGENTA)Creating/Updating archive $(NAME)$(RESET)"
+	$(ARCHIVE_CREATE) $(NAME) $(OBJS)
+	@echo "$(MAGENTA)Library created: $(NAME)$(RESET)"
+
+# Generic rule for compiling ft_printf sources
+$(OBJS_DIR)/%.o: $(FT_PRINTF_ROOT)/%.c
 	@mkdir -p $(dir $@)
 	@echo "$(GREEN)Compiling: $< $(RESET)"
-	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDE_DIR)
-
-# Rule to create/update the static library
-$(NAME): $(OBJS)
-	@mkdir -p $(LIBS_DIR)
-	@echo "$(MAGENTA)Creating/Updating archive $(NAME) $(RESET)"
-	$(ARCHIVE_CREATE) $(NAME) $(OBJS)
-
-bonus: all
-
+	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 clean:
 	@echo "$(YELLOW)Cleaning objects in $(OBJS_DIR)...$(RESET)"
@@ -57,8 +66,10 @@ clean:
 
 fclean: clean
 	@echo "$(YELLOW)Removing archive $(NAME)...$(RESET)"
-	@rm -rf $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
+
+bonus: all
 
 .PHONY: all clean fclean re bonus

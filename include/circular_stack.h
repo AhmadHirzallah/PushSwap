@@ -4,6 +4,20 @@
 # include "circular_list.h"
 
 typedef struct s_stack
+/*
+Understand :     ((  void (*del)(void *);  )) : 
+In C, function pointers work a bit differently than normal pointers.
+You don't need to use an asterisk (*) when assigning a function pointer.
+The name of the function itself acts as a pointer to the function's address in memory.
+
+Works As : (stack->del = del_node_data;)
+Same as doingstack->del = &del_node_data;
+But the & is optional because the function name already represents its memory address.
+
+When Do You Use *?
+You use * when declaring the function pointer: void (*del)(void *);  // Declaration with *
+You don't use * when assigning it:  stack->del = del_node_data;
+*/
 {
     t_circular_lst list;
     void (*del)(void *);

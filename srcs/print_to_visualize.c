@@ -13,7 +13,7 @@ void print_visual_1stack(t_stack *stack, char *stack_name)
     current = stack->list.head;
     while (1)
     {
-        ft_printf("|  %d  |\n", *(int *)current->data);
+        ft_printf("|  %d  |\n", *((int *)current->data_s.data.as_ptr));
         ft_printf("------\n");
         current = current->next;
         if (current == stack->list.head)
@@ -35,11 +35,11 @@ static void print_stack_row(t_list_node *ca, t_list_node *cb)
 
     va = 0;
     if (ca != NULL)
-        va = *(int *)ca->data;
+        va = *((int *)ca->data_s.data.as_ptr);
     
     vb = 0; 
     if (cb != NULL)
-        vb = *(int *)cb->data;
+        vb = *(int *)cb->data_s.data.as_ptr;
     
     ft_printf("|  %3d  |  <->  |  %3d  |\n", va, vb);
 }
