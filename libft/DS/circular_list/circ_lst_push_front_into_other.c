@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   circ_lst_push_front_into_other.c                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/19 15:58:58 by ahirzall          #+#    #+#             */
+/*   Updated: 2025/02/19 15:58:59 by ahirzall         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "circular_list.h"
 #include <stdlib.h>
 
@@ -45,7 +57,8 @@ static void	push_node_to_dest(t_circular_lst *dest, t_list_node *node)
 	dest->size++;
 }
 
-void	circ_lst_push_front_into_other(t_circular_lst *dest, t_circular_lst *src)
+void	circ_lst_push_front_into_other(t_circular_lst *dest,
+		t_circular_lst *src)
 {
 	t_list_node	*node;
 
