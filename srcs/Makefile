@@ -8,8 +8,9 @@ OBJDIR      := ../objs/srcs
 
 
 SRCS        := main.c print_to_visualize.c processing_input.c push_swap.c \
-				validation_checks.c flags_manipulation.c terminate_pushswap.c
-
+				validation_checks.c flags_manipulation.c terminate_pushswap.c \
+				initializations.c is_stack_sorted.c operations3.c operations.c \
+				operations2.c
 
 OBJS        := $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 

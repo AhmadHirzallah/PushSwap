@@ -37,5 +37,24 @@ void rotate_circ_stack(t_stack *s);
 void rev_rotate_circ_stack(t_stack *s);
 short circ_stack_iter_on_data(t_stack *s, int (*f)(void *));
 t_stack *circ_stack_clone(t_stack *s, void *(*copy)(void *), void (*del)(void *));
+/*
+** remove_top_node:
+**   - If the stack is empty, returns NULL.
+**   - Otherwise, removes the head node from s->list and returns it.
+**   - Does not free the node’s data.
+*/
+t_list_node *circ_stck_remove_top_node(t_stack *s);
+/*
+** insert_top_node:
+**   - Inserts 'node' at the beginning of s->list.
+**   - Updates head, tail, and size accordingly.
+*/
+void circ_stck_insert_node_at_top(t_stack *s, t_list_node *node);
+/*
+** push_stack:
+**   - Removes the top node from src and inserts it at the top of dest.
+**   - This function is modular and leverages remove_top_node() and insert_top_node().
+*/
+void	circ_stck_push_stack(t_stack *dest, t_stack *src);
 
 #endif

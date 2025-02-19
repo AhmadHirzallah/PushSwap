@@ -1,4 +1,4 @@
-SUBDIRS := libft	libft/io/ft_printf	libft/io/get_next_line  libft/DS
+SUBDIRS := libft	libft/io/ft_printf	libft/io/get_next_line  libft/DS 
 
 define make_all_modules
 	for dir in $(SUBDIRS); do \

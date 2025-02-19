@@ -11,6 +11,12 @@
 		"span": "c",
 		"utils.h": "c",
 		"push_swap.h": "c",
-		"circular_list.h": "c"
+		"circular_list.h": "c",
+		"queue.h": "c",
+		"__locale": "c",
+		"deque": "c",
+		"unordered_map": "c",
+		"vector": "c",
+		"functional": "c"
 	}
 }

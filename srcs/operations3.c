@@ -1,0 +1,47 @@
+#include "push_swap.h"
+#include "all_headers.h"
+
+void	rra(t_stack *a)
+{
+	rev_rotate_circ_stack(a);
+	ft_printf("rra\n");
+}
+
+void rrb(t_stack *b)
+{
+	rev_rotate_circ_stack(b);
+	ft_printf("rrb\n");
+}
+
+void rrr(t_stack *a, t_stack *b)
+{
+	rev_rotate_circ_stack(a);
+	rev_rotate_circ_stack(b);
+	ft_printf("rrr");
+}
+
+void perform_ps_operations(t_stacks_oprs op, t_stacks *stacks)
+{
+	if (op == RA)
+		ra(stacks->a);
+	else if (op == RB)
+		rb(stacks->b);
+	else if (op == RR)
+		rr(stacks->a, stacks->b);
+	else if (op == RRA)
+		rra(stacks->a);
+	else if (op == RRB)
+		rrb(stacks->b);
+	else if (op == RRR)
+		rrr(stacks->a , stacks->b);
+	else if (op == PA)
+		pa(stacks->a, stacks->b);
+	else if (op == PB)
+		pb(stacks->a, stacks->b);
+	else if (op == SA)
+		sa(stacks->a);
+	else if (op == SB)
+		sb(stacks->b);
+	else if (op == SS)
+		ss(stacks->a, stacks->b);
+}

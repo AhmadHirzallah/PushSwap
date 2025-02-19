@@ -760,7 +760,7 @@ void				str_nullify_delimiters(char *input, const char *delimiters);
 int	ft_atol(const char *nptr);
 short	is_str_space(int chr);
 __int128 ft_atoint128(const char *nptr);
-char *nbr_to_str(__int128_t nbr);
+char	*nbr_to_str(__int128_t nbr);
 
 
 #endif

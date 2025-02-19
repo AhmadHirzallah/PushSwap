@@ -28,52 +28,54 @@ YELLOW      := \033[0;93m
 
 # DList Files
 FILES_DLIST := dlist/dlist_back     dlist/dlist_clear    dlist/dlist_del_end \
-               dlist/dlist_del_front dlist/dlist_del_node dlist/dlist_destroy \
-               dlist/is_dlist_empty  dlist/dlist_find_node dlist/dlist_foreach_on_data \
-               dlist/dlist_front     dlist/dlist_init     dlist/dlist_insert_after \
-               dlist/dlist_insert_before dlist/dlist_insert_begining dlist/dlist_insert_end \
-               dlist/dlist_merge     dlist/dlist_remove_node dlist/dlist_reverse \
-               dlist/dlist_size
+				dlist/dlist_del_front dlist/dlist_del_node dlist/dlist_destroy \
+				dlist/is_dlist_empty  dlist/dlist_find_node dlist/dlist_foreach_on_data \
+				dlist/dlist_front     dlist/dlist_init     dlist/dlist_insert_after \
+				dlist/dlist_insert_before dlist/dlist_insert_begining dlist/dlist_insert_end \
+				dlist/dlist_merge     dlist/dlist_remove_node dlist/dlist_reverse \
+				dlist/dlist_size
 
 # List Files
 FILES_LST   := lst/ft_lstnew_bonus        lst/ft_lstadd_front_bonus  \
-               lst/ft_lstsize_bonus       lst/ft_lstlast_bonus       \
-               lst/ft_lstadd_back_bonus   lst/ft_lstdelone_bonus     \
-               lst/ft_lstclear_bonus      lst/ft_lstiter_bonus       \
-               lst/ft_lstmap_bonus
+				lst/ft_lstsize_bonus       lst/ft_lstlast_bonus       \
+				lst/ft_lstadd_back_bonus   lst/ft_lstdelone_bonus     \
+				lst/ft_lstclear_bonus      lst/ft_lstiter_bonus       \
+				lst/ft_lstmap_bonus
 
 # Stack Files
 FILES_STACK := stack/is_stack_empty       stack/stack_clear      \
-               stack/stack_clone          stack/stack_create     \
-               stack/stack_destroy        stack/stack_iter_on_data \
-               stack/stack_peek           stack/stack_pop        \
-               stack/stack_push           stack/stack_size
+				stack/stack_clone          stack/stack_create     \
+				stack/stack_destroy        stack/stack_iter_on_data \
+				stack/stack_peek           stack/stack_pop        \
+				stack/stack_push           stack/stack_size
 
 # Queue Files
 FILES_QUEUE := queue/dequeue            queue/enqueue          \
-               queue/is_queue_empty     queue/is_queue_full    \
-               queue/queue_clear        queue/queue_create     \
-               queue/queue_destroy      queue/queue_front      \
-               queue/queue_iter         queue/queue_rear       \
-               queue/queue_size         queue/queue_split
+				queue/is_queue_empty     queue/is_queue_full    \
+				queue/queue_clear        queue/queue_create     \
+				queue/queue_destroy      queue/queue_front      \
+				queue/queue_iter         queue/queue_rear       \
+				queue/queue_size         queue/queue_split
 
 # Circular List Files
 FILES_CIRC  := circular_list/circ_list_swap_first_2 circular_list/circ_list_clear \
-               circular_list/circ_list_foreach        circular_list/circ_list_front \
-               circular_list/circ_list_init           circular_list/circ_list_insert_beginning \
-               circular_list/circ_list_insert_end      circular_list/circ_list_is_empty \
-               circular_list/circ_list_remove_node     circular_list/circ_list_size \
-               circular_list/circ_lst_push_front_into_other \
-               circular_list/circ_lst_rev_rotate       circular_list/circ_lst_rotate
+				circular_list/circ_list_foreach        circular_list/circ_list_front \
+				circular_list/circ_list_init           circular_list/circ_list_insert_beginning \
+				circular_list/circ_list_insert_end      circular_list/circ_list_is_empty \
+				circular_list/circ_list_remove_node     circular_list/circ_list_size \
+				circular_list/circ_lst_push_front_into_other \
+				circular_list/circ_lst_rev_rotate       circular_list/circ_lst_rotate
 
 # Circular Stack Files
 FILES_CIRC_STACK := stack_circular/circ_stack_clear  stack_circular/circ_stack_clone \
-                    stack_circular/circ_stack_create stack_circular/circ_stack_destroy \
-                    stack_circular/circ_stack_iter_on_data stack_circular/circ_stack_peek \
-                    stack_circular/circ_stack_pop    stack_circular/circ_stack_push \
-                    stack_circular/circ_stack_rotate stack_circular/circ_stack_size \
-                    stack_circular/circ_stack_swap_top2 stack_circular/is_circ_stack_empty \
-                    stack_circular/rev_rotate_circ_stack stack_circular/push_circ_stack_end
+					stack_circular/circ_stack_create stack_circular/circ_stack_destroy \
+					stack_circular/circ_stack_iter_on_data stack_circular/circ_stack_peek \
+					stack_circular/circ_stack_pop    stack_circular/circ_stack_push \
+					stack_circular/circ_stack_rotate stack_circular/circ_stack_size \
+					stack_circular/circ_stack_swap_top2 stack_circular/is_circ_stack_empty \
+					stack_circular/rev_rotate_circ_stack stack_circular/push_circ_stack_end \
+					stack_circular/circ_stck_remove_top_node stack_circular/circ_stck_push_stack \
+					stack_circular/circ_stck_insert_node_at_top
 
 # ============================================================================ #
 #                             Path Construction                                #

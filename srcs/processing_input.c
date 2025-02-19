@@ -5,6 +5,12 @@ short	prepare_strs_handler(t_utils_helpers *helpers)
 	size_t i;
 	char	*trimmed;
 
+	i = 0;
+	if (helpers->input)
+		while (helpers->input[i])
+			i++;
+		
+	helpers->input_size = i;
 	helpers->malloc_flags = ft_calloc(helpers->input_size, sizeof(short));
 	if (!helpers->malloc_flags)
 		return (__FAIL_MALLOC_FLAGS__);
@@ -101,10 +107,7 @@ short	extract_nbrs_process(t_stacks *stacks, t_utils_helpers *helpers)
 	{
 		error = process_tokens_from_str(helpers->input[i], stacks->a);
 		if (error != __SUCC__)
-		{
-			terminate_ps(stacks, helpers);
 			return (error);
-		}
 		i++;
 	}
 	return (__SUCC__);	
