@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:35:08 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/19 19:35:09 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:28:06 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	get_node_value(t_list_node *node)
 
 static short	check_asending_forwrd(t_list_node *head, size_t half)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < half)
@@ -27,14 +27,14 @@ static short	check_asending_forwrd(t_list_node *head, size_t half)
 		if (get_node_value(head) > get_node_value(head->next))
 			return (0);
 		head = head->next;
-		i++; 
+		i++;
 	}
 	return (1);
 }
 
 static short	check_descending_backwrd(t_list_node *tail, size_t half)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < half)
@@ -49,7 +49,7 @@ static short	check_descending_backwrd(t_list_node *tail, size_t half)
 
 int	is_stack_sorted(t_stack *stack)
 {
-	size_t half;
+	size_t	half;
 
 	if (!stack || stack->list.size < 2)
 		return (1);

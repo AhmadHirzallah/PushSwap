@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:58:29 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/19 15:58:30 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:08:17 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	circ_list_clear(t_circular_lst *list, void (*del)(void *))
 {
-	t_list_node *current;
-	t_list_node *next;
-	size_t i;
+	t_list_node	*current;
+	t_list_node	*next;
+	size_t		i;
 
 	if (list->size == 0)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:34:40 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/19 19:34:41 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:25:36 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 void	del_node_data(void *data)
 {
-    if (data)
-    {
-        free(data);
-        data = NULL;
-    }
+	if (data)
+	{
+		free(data);
+		data = NULL;
+	}
 }
 
-
-static void free_stacks_helper(t_stacks *stacks)
+static void	free_stacks_helper(t_stacks *stacks)
 {
 	if (!stacks)
-        return;
-
+		return ;
 	if (stacks->a)
-    {
-        circ_list_clear(&stacks->a->list, stacks->a->del);
-        free(stacks->a);
-        stacks->a = NULL;
-    }
+	{
+		circ_list_clear(&stacks->a->list, stacks->a->del);
+		free(stacks->a);
+		stacks->a = NULL;
+	}
 	if (stacks->b)
 	{
 		circ_list_clear(&stacks->b->list, stacks->b->del);
@@ -41,7 +39,7 @@ static void free_stacks_helper(t_stacks *stacks)
 	}
 }
 
-static void free_helpers_malc_flg(t_utils_helpers *helpers)
+static void	free_helpers_malc_flg(t_utils_helpers *helpers)
 {
 	if ((helpers)->dsply_prnt_hndler.list)
 	{
@@ -54,7 +52,7 @@ static void free_helpers_malc_flg(t_utils_helpers *helpers)
 // static void free_utils_helper(t_utils_helpers **helpers)
 // {
 // 	long i;
-	
+
 // 	if (!helpers || !*helpers)
 // 		return ;
 // 	if ((*helpers)->input)
@@ -73,12 +71,10 @@ static void free_helpers_malc_flg(t_utils_helpers *helpers)
 
 int	terminate_ps(t_stacks *stacks, t_utils_helpers *helpers)
 {
-
 	free_helpers_malc_flg(helpers);
 	helpers = NULL;
 	free_stacks_helper(stacks);
 	stacks = NULL;
-	// free_utils_helper(&helpers);
 	ft_putstr_fd("Error\n", 2);
-	return 0;
+	return (0);
 }

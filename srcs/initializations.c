@@ -12,7 +12,7 @@
 
 #include "all_headers.h"
 
-t_stack	*init_stack()
+t_stack	*init_stack(void)
 {
 	t_stack	*stack;
 
@@ -33,8 +33,6 @@ short	init_stacks_a_b(t_stacks *stacks)
 		return (__STACK_MALLOC_FAIL__);
 	return (__SUCC__);
 }
-
-
 
 short	init_helpers(t_utils_helpers **helpers)
 {
@@ -62,4 +60,3 @@ short	initialize_ps(t_stacks **stacks, t_utils_helpers **helpers)
 		return (__HELPERS_MALLOC_FAIL__);
 	return (__SUCC__);
 }
-

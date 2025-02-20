@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_tok.c                                          :+:      :+:    :+:   */
+/*   str_tok_sttc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 14:53:17 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/15 16:39:02 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:57:45 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ This Function will create tokens but in many rounds; every round it will return 
 
 if (!*next_ptr_pos)
 {
-    *next_ptr_pos = '\0';
-    next_ptr_pos++;
-} 
+	*next_ptr_pos = '\0';
+	next_ptr_pos++;
+}
 
 */
 {

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoint128.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/19 19:53:28 by ahirzall          #+#    #+#             */
+/*   Updated: 2025/02/19 20:02:51 by ahirzall         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-__int128 ft_atoint128(const char *nptr)
+__int128	ft_atoint128(const char *nptr)
 /*
 Type           | Bits  | Signed Range
 ----------------------------------------------
@@ -10,25 +22,25 @@ long long      | 64    | Same as long
 __int128_t     | 128   | -2¹²⁷ to 2¹²⁷-1 (≈ ±1.7e³⁸)
 */
 {
-    int i = 0;
-    short sign = 1;
-    __int128 result = 0;
-    
-    while (is_str_space(nptr[i]))
-        i++;
-    
-    if (nptr[i] == '+' || nptr[i] == '-')
-    {
-        if (nptr[i] == '-')
-            sign = -1;
-        i++;
-    }
-    
-    while (ft_isdigit(nptr[i]))
-    {
-        result = (result * 10) + (nptr[i] - '0');
-        i++;
-    }
-    
-    return (result * sign);
+	int			i;
+	short		sign;
+	__int128	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (is_str_space(nptr[i]))
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]))
+	{
+		result = (result * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }

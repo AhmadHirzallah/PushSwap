@@ -6,12 +6,12 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:34:52 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/19 19:34:53 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:19:56 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "all_headers.h"
+#include "push_swap.h"
 
 void	rra(t_stack *a)
 {
@@ -19,20 +19,20 @@ void	rra(t_stack *a)
 	ft_printf("rra\n");
 }
 
-void rrb(t_stack *b)
+void	rrb(t_stack *b)
 {
 	rev_rotate_circ_stack(b);
 	ft_printf("rrb\n");
 }
 
-void rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack *a, t_stack *b)
 {
 	rev_rotate_circ_stack(a);
 	rev_rotate_circ_stack(b);
 	ft_printf("rrr");
 }
 
-void perform_ps_operations(t_stacks_oprs op, t_stacks *stacks)
+void	perform_ps_operations(t_stacks_oprs op, t_stacks *stacks)
 {
 	if (op == RA)
 		ra(stacks->a);
@@ -45,7 +45,7 @@ void perform_ps_operations(t_stacks_oprs op, t_stacks *stacks)
 	else if (op == RRB)
 		rrb(stacks->b);
 	else if (op == RRR)
-		rrr(stacks->a , stacks->b);
+		rrr(stacks->a, stacks->b);
 	else if (op == PA)
 		pa(stacks->a, stacks->b);
 	else if (op == PB)

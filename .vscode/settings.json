@@ -17,6 +17,8 @@
 		"deque": "c",
 		"unordered_map": "c",
 		"vector": "c",
-		"functional": "c"
+		"functional": "c",
+		"chrono": "c",
+		"variant": "c"
 	}
 }

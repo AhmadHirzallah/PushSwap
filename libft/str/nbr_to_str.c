@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nbr_to_str.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/19 19:56:36 by ahirzall          #+#    #+#             */
+/*   Updated: 2025/02/19 19:56:48 by ahirzall         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static void	handle_negative(__int128_t nbr, short *is_negative, unsigned __int128 *unbr)
+static void	handle_negative(__int128_t nbr, short *is_negative,
+		unsigned __int128 *unbr)
 {
 	if (nbr < 0)
 	{
@@ -46,7 +59,8 @@ static void	reverse_digits(char *bfr, size_t len)
 	}
 }
 
-static void	fill_result_nbr(char *result, int is_negative, char *bfr, size_t digit_count)
+static void	fill_result_nbr(char *result, int is_negative, char *bfr,
+		size_t digit_count)
 {
 	char	*cur;
 	size_t	i;

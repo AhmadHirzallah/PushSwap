@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:58:40 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/19 15:58:41 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:06:20 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	circ_list_insert_beginning(t_circular_lst *list, void *data)
 {
-	t_list_node *new_node;
+	t_list_node	*new_node;
 
 	new_node = malloc(sizeof(t_list_node));
 	if (!new_node)

@@ -19,7 +19,6 @@ int	get_ptr_int(t_list_node *node)
 	return (*(int *)node->data_s.data.as_ptr);
 }
 
-
 static void	rotate_min_data_upward(t_stack *a, long index)
 {
 	while (index > 0)
@@ -40,9 +39,9 @@ static void	rotate_min_data_downward(t_stack *a, long moves)
 
 static void	push_min_into_b(t_stacks *stacks)
 {
-	short index;
-	short half;
-	short moves;
+	short	index;
+	short	half;
+	short	moves;
 
 	index = find_min_data_index(stacks->a);
 	half = (stacks->a->list.size) / 2;
@@ -50,18 +49,17 @@ static void	push_min_into_b(t_stacks *stacks)
 		half += 1;
 	if (index <= half)
 		rotate_min_data_upward(stacks->a, index);
-	else 
+	else
 	{
 		moves = stacks->a->list.size - index;
 		rotate_min_data_downward(stacks->a, moves);
 	}
 	pb(stacks->a, stacks->b);
 }
-	
 
 void	sort_five(t_stacks *stacks)
 {
-	t_stack *a;
+	t_stack	*a;
 
 	if (!stacks || !stacks->a || stacks->a->list.size != 5)
 		return ;

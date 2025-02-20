@@ -12,11 +12,10 @@
 
 #include "all_headers.h"
 
-
 static short	check_is_duplicate(t_stack *stack, int nbr)
 {
 	t_list_node	*current;
-	size_t	count;
+	size_t		count;
 
 	if (!stack)
 		return (__ERR_IN_LST_DUP_CHCK__);
