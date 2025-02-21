@@ -40,12 +40,13 @@ static void	perform_ps(t_stacks *stacks)
 {
 	__int128	size;
 	
+	refresh_stacks_all(stacks);
 	size = stacks->a->list.size;
 	if (size == 2)
 		sorting_algorithms(SORT_TWO_NBRS, stacks);
 	else if (size == 3)
 		sorting_algorithms(SORT_THREE_NBRS, stacks);
-	else if (size == 5)
+	else if (size <= 5)
 		sorting_algorithms(SORT_FIVE_NBRS, stacks);
 	else
 		sorting_algorithms(TURK_ALGO, stacks);
@@ -68,6 +69,8 @@ int	push_swap(int *argc, char **argv[])
 		terminate_ps(stacks, helpers);
 		return (result);
 	}
+	if (is_stack_sorted(stacks->a))
+		return (__SUCC__);
 	perform_ps(stacks);
 	
 
@@ -81,8 +84,6 @@ int	push_swap(int *argc, char **argv[])
 
 	// perform_ps_operations(SA, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
-	// 	stacks->b->list.size);
 
 	// perform_ps_operations(PB, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");

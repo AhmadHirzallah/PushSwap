@@ -56,4 +56,5 @@ void	perform_ps_operations(t_stacks_oprs op, t_stacks *stacks)
 		sb(stacks->b);
 	else if (op == SS)
 		ss(stacks->a, stacks->b);
+	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
 }

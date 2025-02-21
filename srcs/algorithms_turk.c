@@ -12,17 +12,27 @@
 
 #include "all_headers.h"
 
+
+void b_stck_psh2_set_up(t_stacks *stacks)
+{
+    while (stacks->b->list.size < 2)
+    {
+        push_min_into_b(stacks);
+        refresh_stacks_all(stacks);
+    }
+}
+
 static t_list_node *select_candidate(t_stacks *stacks, long *min_cost)
 {
     t_list_node *current;
     t_list_node *candidate;
-    size_t i;
+    ssize_t i;
 
     candidate = NULL;
     *min_cost = LONG_MAX;
     current = stacks->a->list.head;
     i = -1;
-    while (++i < stacks->a->list.size)
+    while (++i < (ssize_t)stacks->a->list.size)
     {
         current->target = find_target_node(current, stacks->b);
         current->push_cost = compute_push_cost(current, current->target, stacks);
@@ -30,7 +40,7 @@ static t_list_node *select_candidate(t_stacks *stacks, long *min_cost)
         {
             *min_cost = current->push_cost;
             candidate = current;
-            if (current->push_cost <= 1)
+            if (current->push_cost <= 2)
                 return (current);
         }
         current = current->next; 
@@ -49,7 +59,7 @@ static void process_candidate(t_stacks *stacks, t_list_node *candidate)
     rotate_stack(stacks->a, a_rot, a_dir, 'a');
     calculate_rotations(stacks->b, candidate->target, &b_dir, &b_rot);
     rotate_stack(stacks->b, b_rot, b_dir, 'b');
-    pb(stacks->a, stacks->b);
+    perform_ps_operations(PB, stacks);
 }
 
 void turk_algorithm(t_stacks *stacks)
@@ -57,16 +67,18 @@ void turk_algorithm(t_stacks *stacks)
     t_list_node *candidate;
     long min_cost;
 
-    while (stacks->a->list.size > 5 && !is_stack_sorted(stacks->a))
+    b_stck_psh2_set_up(stacks);
+    while (!is_stack_sorted(stacks->a) && (stacks->a->list.size > 3))
     {
-        refresh_stacks_all(stacks);
         candidate = select_candidate(stacks, &min_cost);
         if (candidate == NULL)
             break;
         process_candidate(stacks, candidate);
+        refresh_stacks_all(stacks);
     }
-    if (stacks->a->list.size <= 5)
-        sort_five(stacks);
+    if (stacks->a->list.size <= 3)
+        sorting_algorithms(SORT_THREE_NBRS, stacks);
     while (stacks->b->list.size > 0)
-        perform_ps_operations(PA, stacks);
+        turk_algorithm_b_to_a(stacks);
+    	
 }

@@ -37,7 +37,7 @@ static void	rotate_min_data_downward(t_stack *a, long moves)
 	}
 }
 
-static void	push_min_into_b(t_stacks *stacks)
+void	push_min_into_b(t_stacks *stacks)
 {
 	long	index;
 	long	half;
@@ -61,13 +61,19 @@ void	sort_five(t_stacks *stacks)
 {
 	t_stack	*a;
 
-	if (!stacks || !stacks->a || stacks->a->list.size != 5)
+	if (!stacks || !stacks->a || stacks->a->list.size > 5)
 		return ;
 	a = stacks->a;
 	while (a->list.size > 3)
+	{
+		refresh_stacks_all(stacks);
 		push_min_into_b(stacks);
+	}
 	sort_three(stacks->a);
 	while (stacks->b->list.size > 0)
-		pa(stacks->a, stacks->b);
+	{
+		refresh_stacks_all(stacks);
+		perform_ps_operations(PA, stacks);
+	}
 	refresh_stacks_all(stacks);
 }

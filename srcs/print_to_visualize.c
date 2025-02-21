@@ -95,4 +95,6 @@ void	print_visual_2stacks(t_stack *a, char *na, t_stack *b, char *nb)
 		print_stack_row(ca, cb);
 		update_currents(&ca, &cb, ha, hb);
 	}
+	ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", a->list.size,
+		b->list.size);
 }

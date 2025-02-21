@@ -190,6 +190,13 @@ void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, l
 void	rotate_stack(t_stack *s, long rotations, t_stacks_oprs direction, char stack_name);
 void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, long *rot_nbr);
 t_list_node *find_target_node(t_list_node *a_node, t_stack *b);
+void b_stck_psh2_set_up(t_stacks *stacks);
+void	push_min_into_b(t_stacks *stacks);
+void set_target_for_b(t_stack *a, t_stack *b);
+t_list_node *select_candidate_b_to_a(t_stacks *s, long *min_cost);
+t_list_node *find_target_for_b(t_list_node *b_node, t_stack *a);
+t_list_node	*find_min_node(t_list_node *head);
+void turk_algorithm_b_to_a(t_stacks *s);
 
 
 #endif

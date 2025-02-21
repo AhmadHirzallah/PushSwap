@@ -58,6 +58,8 @@ typedef union u_value_data
 	float			as_float;
 
 	double			as_double;
+
+	int				*as_int_ptr;
 }					t_value_data;
 
 typedef struct s_value

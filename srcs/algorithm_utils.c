@@ -51,19 +51,19 @@ long	read_stack_length(t_stack *stack)
 	return (len);
 }
 
-t_list_node	*find_max_node(t_list_node *b_head)
+t_list_node	*find_max_node(t_list_node *head)
 {
 	t_list_node	*current;
 	t_list_node	*max_node;
 	int			max_val;
 	int			current_val;
 
-	if (!b_head)
+	if (!head)
 		return (NULL);
-	max_node = b_head;
+	max_node = head;
 	current = max_node->next;
 	max_val = get_node_value(max_node);
-	while (current != b_head)
+	while (current != head)
 	{
 		current_val = get_node_value(current);
 		if (current_val > max_val)
@@ -98,16 +98,14 @@ void	sort_two(t_stack *a)
 void	sort_three(t_stack *s)
 {
 	t_list_node	*max;
-	t_list_node	*head;
 
 	if (!s || !s->list.head || s->list.size != 3)
 		return ;
-	head = s->list.head;
 	max = find_max_node(s->list.head);
-	if (max == head)
+	if (max == s->list.head)
 		ra(s);
-	else if (head->next == max)
+	else if (s->list.head->next == max)
 		rra(s);
-	if (get_ptr_int(head) > get_ptr_int(head->next))
+	if (get_ptr_int(s->list.head) > get_ptr_int(s->list.head->next))
 		sa(s);
 }

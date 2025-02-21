@@ -69,7 +69,7 @@ long find_min_data_index(t_circular_lst *list)
     long min_index;
     long min_value;
 
-	min_value = LONG_MAX;
+	// min_value = LONG_MAX;
 	min_index = 0;
     if (list->size == 0)
 		return (-1);
