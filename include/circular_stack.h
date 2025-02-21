@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 22:15:45 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/20 05:55:08 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:32:38 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_stack
 	t_circular_lst	list;
 	void			(*del)(void *);
 }					t_stack;
+
 
 t_stack				*create_circ_stack(void (*del)(void *));
 void				destroy_circ_stack(t_stack *s);

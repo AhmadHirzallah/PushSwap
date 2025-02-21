@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:35:45 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/20 06:17:01 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/21 03:16:24 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,14 +166,14 @@ int			get_ptr_int(t_list_node *node);
 ** If the first node's integer is greater than the second's, it swaps them.
 */
 void		sort_two(t_stack *a);
-t_list_node	*find_max_node(t_stack *stack);
+t_list_node	*find_max_node(t_list_node *b_head);
 void		sort_three(t_stack *a);
 /*
 ** find_min_index:
 ** Returns the index of the node with the smallest integer in stack A.
 ** Iterates the circular list using only while loops.
 */
-long		find_min_data_index(t_stack *stack);
+long find_min_data_index(t_circular_lst *list);
 void		sort_five(t_stacks *stacks);
 /*
 - Will loop refresh all stack (a) indices.
@@ -181,7 +181,15 @@ void		sort_five(t_stacks *stacks);
 - Will calculate middle point of (a) & (b) in struct.
 */
 void	refresh_stacks_all(t_stacks *stacks);
-t_list_node *find_target_node(t_list_node *a_node, t_stack *b);
 long	compute_push_cost(t_list_node *a_node, t_list_node *b_target, t_stacks *s);
+short	is_stack_sorted(t_stack *stack);
+void	refresh_stacks_all(t_stacks *stacks);
+void turk_algorithm(t_stacks *stacks);
+void	sorting_algorithms(t_sorting_cases sorting_type, t_stacks *stacks);
+void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, long *rot_nbr);
+void	rotate_stack(t_stack *s, long rotations, t_stacks_oprs direction, char stack_name);
+void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, long *rot_nbr);
+t_list_node *find_target_node(t_list_node *a_node, t_stack *b);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:35:24 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/20 08:19:49 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/21 03:01:55 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,19 +95,19 @@ void	sort_two(t_stack *a)
 	sa(a);
 }
 
-void	sort_three(t_stack *a)
+void	sort_three(t_stack *s)
 {
 	t_list_node	*max;
 	t_list_node	*head;
 
-	if (!a || !a->list.head || a->list.size != 3)
+	if (!s || !s->list.head || s->list.size != 3)
 		return ;
-	head = a->list.head;
-	max = find_max_node(a);
+	head = s->list.head;
+	max = find_max_node(s->list.head);
 	if (max == head)
-		ra(a);
+		ra(s);
 	else if (head->next == max)
-		rra(a);
+		rra(s);
 	if (get_ptr_int(head) > get_ptr_int(head->next))
-		sa(a);
+		sa(s);
 }

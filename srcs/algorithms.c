@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:35:18 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/19 19:35:19 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/21 03:07:08 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ static void	rotate_min_data_downward(t_stack *a, long moves)
 
 static void	push_min_into_b(t_stacks *stacks)
 {
-	short	index;
-	short	half;
-	short	moves;
+	long	index;
+	long	half;
+	long	moves;
 
-	index = find_min_data_index(stacks->a);
+	index = find_min_data_index(&stacks->a->list);
 	half = (stacks->a->list.size) / 2;
 	if (stacks->a->list.size % 2 == 1)
 		half += 1;
@@ -69,4 +69,5 @@ void	sort_five(t_stacks *stacks)
 	sort_three(stacks->a);
 	while (stacks->b->list.size > 0)
 		pa(stacks->a, stacks->b);
+	refresh_stacks_all(stacks);
 }
