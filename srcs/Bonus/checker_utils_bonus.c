@@ -1,5 +1,5 @@
-#include "pushswap_bonus.h"
 #include "../mandatory/all_headers.h"
+#include "pushswap_bonus.h"
 
 int	get_value(t_dlist_node *node)
 {
@@ -9,7 +9,7 @@ int	get_value(t_dlist_node *node)
 static short	check_is_duplicate(t_d_stack *s, int nbr)
 {
 	t_dlist_node	*current;
-	size_t		count;
+	size_t			count;
 
 	if (!s)
 		return (__SUCC__);

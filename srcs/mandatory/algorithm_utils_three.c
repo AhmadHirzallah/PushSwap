@@ -71,7 +71,7 @@ static void	perform_combined_rotations(t_stacks *stacks,
 {
 	long common_rot;
 	t_stacks_oprs new_ops;
-   
+
 	if (*a_dir == *b_dir)
 	{
 		new_ops = set_rotation_type_nbr(*a_dir, &common_rot, *a_rot, *b_rot);

@@ -22,9 +22,9 @@ typedef struct t_list_node
 	struct t_list_node	*next;
 	struct t_list_node	*prev;
 	struct t_list_node	*target;
-	int                 push_cost;
+	int					push_cost;
 	long				index;
-    unsigned int   flags;
+	unsigned int		flags;
 }						t_list_node;
 
 typedef struct s_circular_lst

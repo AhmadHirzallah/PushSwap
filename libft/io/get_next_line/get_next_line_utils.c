@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-static t_rtrns	gnl_double_temp(t_gnl *gnl, long *iter)
+static t_rtrnss	gnl_double_temp(t_gnl *gnl, long *iter)
 {
 	long	i;
 
@@ -32,10 +32,10 @@ static t_rtrns	gnl_double_temp(t_gnl *gnl, long *iter)
 		free(gnl->temp);
 		gnl->temp = gnl->temp2;
 	}
-	return (OK);
+	return (OKK);
 }
 
-static t_rtrns	gnl_line_setting_up(t_gnl *gnl, long r)
+static t_rtrnss	gnl_line_setting_up(t_gnl *gnl, long r)
 {
 	if (gnl->temp && gnl->length_temp)
 	{
@@ -51,10 +51,10 @@ static t_rtrns	gnl_line_setting_up(t_gnl *gnl, long r)
 		gnl->line[r] = '\0';
 	}
 	free(gnl->temp);
-	return (OK);
+	return (OKK);
 }
 
-static t_rtrns	gnl_initialization(t_gnl *gnl, long *r)
+static t_rtrnss	gnl_initialization(t_gnl *gnl, long *r)
 {
 	gnl->size_temp = BUFFER_SIZE * 2;
 	gnl->temp = malloc(gnl->size_temp);
@@ -74,10 +74,10 @@ static t_rtrns	gnl_initialization(t_gnl *gnl, long *r)
 		return (INITIALIZATION_FAIL);
 	}
 	gnl->buffer[BUFFER_SIZE] = '\0';
-	return (OK);
+	return (OKK);
 }
 
-static t_rtrns	gnl_data_directing(t_gnl *gnl, long r, long i)
+static t_rtrnss	gnl_data_directing(t_gnl *gnl, long r, long i)
 {
 	i = 0;
 	while (i < r && (!i || gnl->buffer[i - 1] != '\n'))
@@ -93,9 +93,9 @@ static t_rtrns	gnl_data_directing(t_gnl *gnl, long r, long i)
 	return (CONTIN_TILL_FULL_LINE_UP);
 }
 
-t_rtrns	gnl_read_file(t_gnl *gnl, long r, long i, long iter)
+t_rtrnss	gnl_read_file(t_gnl *gnl, long r, long i, long iter)
 {
-	if (gnl_initialization(gnl, &r) != OK)
+	if (gnl_initialization(gnl, &r) != OKK)
 		return (INITIALIZATION_FAIL);
 	while (r > 0 && gnl->temp && !gnl->count_newlns[gnl->fd])
 	{
@@ -108,7 +108,7 @@ t_rtrns	gnl_read_file(t_gnl *gnl, long r, long i, long iter)
 		}
 		if (gnl_data_directing(gnl, r, i) == FULL_LINE_UP)
 			break ;
-		if (gnl_double_temp(gnl, &iter) != OK)
+		if (gnl_double_temp(gnl, &iter) != OKK)
 		{
 			free(gnl->buffer);
 			return (DOUBLE_TMP_FAIL);

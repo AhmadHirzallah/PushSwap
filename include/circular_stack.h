@@ -19,11 +19,11 @@
 Understand :     ((  void (*del)(void *);  )) :
 In C, function pointers work a bit differently than normal pointers.
 You don't need to use an asterisk (*) when assigning a function pointer.
-The name of the function itself acts 
+The name of the function itself acts
 as a pointer to the function's address in memory.
 Works As : (stack->del = del_node_data;)
 Same as doingstack->del = &del_node_data;
-But the & is optional 
+But the & is optional
 because the function name already represents its memory address.
 When Do You Use *?
 You use * when declaring the function pointer: void (*del)(void *);
@@ -35,7 +35,6 @@ typedef struct s_stack
 	t_circular_lst	list;
 	void			(*del)(void *);
 }					t_stack;
-
 
 t_stack				*create_circ_stack(void (*del)(void *));
 void				destroy_circ_stack(t_stack *s);
@@ -67,10 +66,10 @@ t_list_node			*circ_stck_remove_top_node(t_stack *s);
 void				circ_stck_insert_node_at_top(t_stack *s, t_list_node *node);
 /*
 ** push_stack:
-**   - Removes the top node from src 
+**   - Removes the top node from src
 		and inserts it at the top of dest.
 **
-	- This function is modular 
+	- This function is modular
 	and leverages remove_top_node() and insert_top_node().
 */
 void				circ_stck_push_stack(t_stack *dest, t_stack *src);

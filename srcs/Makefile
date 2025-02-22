@@ -18,8 +18,9 @@ SRCS := main.c print_to_visualize.c processing_input.c push_swap.c \
 	algorithms.c flags_manipulation.c min_sort.c algorithms_turk2.c \
 	algorithms_three.c algorithm_utils_three.c
 
-SRCS_BONUS := ps_main_bonus.c checker_utils_bonus.c print_visualize_bonus.c
-
+SRCS_BONUS := ps_main_bonus.c checker_utils_bonus.c print_visualize_bonus.c \
+	operations_bonus.c bonus_utils.c ops_utils_bonus.c ops_utils_three_bonus.c \
+	result_cleanup_bonus.c
 
 OBJS        := $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 OBJS_BONUS        := $(addprefix $(OBJDIR_BONUS)/, $(SRCS_BONUS:.c=.o))

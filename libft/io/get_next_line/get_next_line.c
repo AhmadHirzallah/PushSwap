@@ -50,7 +50,7 @@ char	*get_next_line(int fd)
 	if (!gnl.count_newlns[fd])
 	{
 		gnl.what_rtrn = gnl_read_file(&gnl, -1, 0, 0);
-		if (gnl.what_rtrn != OK)
+		if (gnl.what_rtrn != OKK)
 			return (NULL);
 	}
 	else

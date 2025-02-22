@@ -14,10 +14,10 @@
 # define PUSH_SWAP_H
 
 # include "circular_list.h"
+# include "ft_printf.h"
 # include "libft.h"
 # include "push_swap.h"
 # include "utils.h"
-# include "ft_printf.h"
 
 /*
 1. Modifying the Value (Content) of the First Element:
@@ -63,9 +63,9 @@ short		init_helpers(t_utils_helpers **helpers);
 		which is an address (*stacks).
 	- We are not changing the address of the pointer itself.
 	- The pointer still lives in the same place in memory;
-	 we're just updating where it points.
+		we're just updating where it points.
 			So, after calling ft_calloc,
-				the memory for 
+				the memory for
 				stacks (of type t_stacks) will look like this:
 				stacks->a.head = NULL;
 				stacks->a.tail = NULL;
@@ -122,7 +122,7 @@ In a typical 32‐bit integer,
 void		turk_unset_flag(t_turk_algo_data *tad, t_stack_flags flag);
 /*
 & is the bitwise AND operator.
-(tad->flags & flag) != 0 checks 
+(tad->flags & flag) != 0 checks
 if at least one of the bits in flag is also set in tad->flags.
 If that result is nonzero, it means the bit(s) you care about are set.
 */
@@ -150,7 +150,7 @@ and performs the corresponding move on the any stack depending on the operation.
 void		perform_ps_operations(t_stacks_oprs op, t_stacks *stacks);
 /*
 ** read_update_indices:
-** Updates node indices in the circular list 
+** Updates node indices in the circular list
 and returns the length of the stack :)
 */
 long		read_update_indices(t_stack *stack);
@@ -174,40 +174,40 @@ void		sort_three(t_stack *a);
 ** Returns the index of the node with the smallest integer in stack A.
 ** Iterates the circular list using only while loops.
 */
-long find_min_data_index(t_circular_lst *list);
+long		find_min_data_index(t_circular_lst *list);
 void		sort_five(t_stacks *stacks);
 /*
 - Will loop refresh all stack (a) indices.
 - Will loop refresh all stack (b) indices.
 - Will calculate middle point of (a) & (b) in struct.
 */
-void	refresh_stacks_all(t_stacks *stacks);
-long	compute_push_cost(t_list_node *a_node, t_list_node *b_target, t_stacks *s);
-short	is_stack_sorted(t_stack *stack);
-void	refresh_stacks_all(t_stacks *stacks);
-void turk_algorithm(t_stacks *stacks);
-void	sorting_algorithms(t_sorting_cases sorting_type, t_stacks *stacks);
-void	rotate_stack(t_stack *s, long rotations, t_stacks_oprs direction, char stack_name);
-t_list_node *find_target_node(t_list_node *a_node, t_stack *b);
-void b_stck_psh2_set_up(t_stacks *stacks);
-void	push_min_into_b(t_stacks *stacks);
-void set_target_for_b(t_stack *a, t_stack *b);
-t_list_node *select_candidate_b_to_a(t_stacks *s, long *min_cost);
-t_list_node *find_target_for_b(t_list_node *b_node, t_stack *a);
+void		refresh_stacks_all(t_stacks *stacks);
+long		compute_push_cost(t_list_node *a_node, t_list_node *b_target,
+				t_stacks *s);
+short		is_stack_sorted(t_stack *stack);
+void		refresh_stacks_all(t_stacks *stacks);
+void		turk_algorithm(t_stacks *stacks);
+void		sorting_algorithms(t_sorting_cases sorting_type, t_stacks *stacks);
+void		rotate_stack(t_stack *s, long rotations, t_stacks_oprs direction,
+				char stack_name);
+t_list_node	*find_target_node(t_list_node *a_node, t_stack *b);
+void		b_stck_psh2_set_up(t_stacks *stacks);
+void		push_min_into_b(t_stacks *stacks);
+void		set_target_for_b(t_stack *a, t_stack *b);
+t_list_node	*select_candidate_b_to_a(t_stacks *s, long *min_cost);
+t_list_node	*find_target_for_b(t_list_node *b_node, t_stack *a);
 t_list_node	*find_min_node(t_list_node *head);
-void turk_algorithm_b_to_a(t_stacks *s);
-void	perform_rotations(t_stacks *stacks,
-								   long a_rot, t_stacks_oprs a_dir,
-								   long b_rot, t_stacks_oprs b_dir);
-int	terminate_ps(t_stacks *stacks, enum e_returns result);
-void	end_turk(t_stacks *s);
-void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, long *rot_nbr);
-void	print_headers(char *na, char *nb);
-void	print_stack_row(t_list_node *ca, t_list_node *cb);
-void	update_currents(t_list_node **ca, t_list_node **cb, t_list_node *ha,
-		t_list_node *hb);
-short	is_valid_nbr_str(const char *str);
-
-
+void		turk_algorithm_b_to_a(t_stacks *s);
+void		perform_rotations(t_stacks *stacks, long a_rot, t_stacks_oprs a_dir,
+				long b_rot, t_stacks_oprs b_dir);
+int			terminate_ps(t_stacks *stacks, enum e_returns result);
+void		end_turk(t_stacks *s);
+void		calculate_rotations(t_stack *s, t_list_node *n,
+				t_stacks_oprs *direction, long *rot_nbr);
+void		print_headers(char *na, char *nb);
+void		print_stack_row(t_list_node *ca, t_list_node *cb);
+void		update_currents(t_list_node **ca, t_list_node **cb, t_list_node *ha,
+				t_list_node *hb);
+short		is_valid_nbr_str(const char *str);
 
 #endif

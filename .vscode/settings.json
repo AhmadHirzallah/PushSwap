@@ -21,6 +21,8 @@
 		"chrono": "c",
 		"variant": "c",
 		"pushswap_bonus.h": "c",
-		"dlist.h": "c"
+		"dlist.h": "c",
+		"ft_printf.h": "c",
+		"get_next_line.h": "c"
 	}
 }

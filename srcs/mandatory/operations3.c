@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:34:52 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/20 20:23:28 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:32:41 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,4 @@ void	perform_ps_operations(t_stacks_oprs op, t_stacks *stacks)
 		ss(stacks->a, stacks->b);
 	else if (op == END_TURK)
 		end_turk(stacks);
-
-
 }

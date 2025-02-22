@@ -1,6 +1,18 @@
-#include "pushswap_bonus.h"
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_main_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/22 18:56:19 by ahirzall          #+#    #+#             */
+/*   Updated: 2025/02/22 19:08:40 by ahirzall         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../mandatory/all_headers.h"
+#include "push_swap.h"
+#include "pushswap_bonus.h"
 
 short	is_valid_nbr_str(const char *str)
 {
@@ -19,10 +31,10 @@ short	is_valid_nbr_str(const char *str)
 
 static short	process_tokens_from_str(char *input, t_d_stack *a)
 {
-	__int128_t	nbr;
-	short		validation;
-	char		*next_nbr_str;
-	t_value_data *data;
+	__int128_t		nbr;
+	short			validation;
+	char			*next_nbr_str;
+	t_value_data	*data;
 
 	next_nbr_str = str_tok_sttc(input, " \n\t");
 	while (next_nbr_str)
@@ -60,7 +72,7 @@ short	extract_nbrs(t_stacks_bonus *ss)
 	return (__SUCC__);
 }
 
-short	 intitalize_structs(t_stacks_bonus **ss, int argc, char **argv)
+short	intitalize_structs(t_stacks_bonus **ss, int argc, char **argv)
 {
 	*ss = ft_calloc(1, sizeof(t_stacks_bonus));
 	if (!(*ss))
@@ -76,7 +88,7 @@ short	 intitalize_structs(t_stacks_bonus **ss, int argc, char **argv)
 	return (__SUCC__);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stacks_bonus *ss;
 	enum e_rtrns rtrn_result;
@@ -85,8 +97,12 @@ int main(int argc, char **argv)
 		return (__WRNG_ARGS_NBR__);
 	rtrn_result = intitalize_structs(&ss, argc, argv);
 	rtrn_result = extract_nbrs(ss);
-	bonus_print_visual_2dstacks(ss->a, "Stack a", ss->b, "Stack b");
-	return (rtrn_result);
-
-	
+	if (rtrn_result != __SUCC__)
+	{
+		free_stacks_bonus(ss);
+		return (rtrn_result);
+	}
+	// bonus_print_visual_2dstacks(ss->a, "Stack a", ss->b, "Stack b");
+	check_user_input_ops(ss);
+	return (display_checker_result(ss));
 }
