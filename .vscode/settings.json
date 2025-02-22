@@ -19,6 +19,8 @@
 		"vector": "c",
 		"functional": "c",
 		"chrono": "c",
-		"variant": "c"
+		"variant": "c",
+		"pushswap_bonus.h": "c",
+		"dlist.h": "c"
 	}
 }

@@ -69,7 +69,7 @@ Store the integer directly in the t_value union instead of allocating memory.
 	return (__SUCC__);
 }
 
-static short	is_valid_nbr_str(const char *str)
+short	is_valid_nbr_str(const char *str)
 {
 	if (!str || !*str)
 		return (__ERR_INVALID_NBR_CHR__);
@@ -90,7 +90,7 @@ static short	process_tokens_from_str(char *input, t_stack *a)
 	short		validation;
 	char		*next_nbr_str;
 
-	next_nbr_str = str_tok_sttc(input, " \n\t,;");
+	next_nbr_str = str_tok_sttc(input, " \n\t");
 	while (next_nbr_str)
 	{
 		validation = is_valid_nbr_str(next_nbr_str);

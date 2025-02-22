@@ -15,10 +15,11 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include "libft.h"
 
 typedef struct s_dlist_node
 {
-	void				*data;
+	t_value_data	*data;
 	struct s_dlist_node	*next;
 	struct s_dlist_node	*prev;
 }						t_dlist_node;
@@ -34,7 +35,7 @@ typedef struct s_dlist
 void					dlist_init(t_dlist *list, void (*del)(void *));
 void					dlist_destroy(t_dlist *list);
 short					dlist_insert_begining(t_dlist *list, void *data);
-short					dlist_insert_end(t_dlist *list, void *data);
+short	dlist_insert_end(t_dlist *list, t_value_data *data);
 short					dlist_insert_after(t_dlist *list, t_dlist_node *node,
 							void *data);
 short					dlist_insert_before(t_dlist *list, t_dlist_node *node,

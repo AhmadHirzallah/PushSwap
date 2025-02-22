@@ -21,13 +21,40 @@
                     "ignoreFailures": true
                 }
             ]
+        },
+        {
+            "name": "Debug checker (from file)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/checker",
+            "args": ["${input:ARG_CHECKER}"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "build-project",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ],
     "inputs": [
         {
             "id": "ARG",
             "type": "promptString",
-            "description": "Enter the numbers (e.g. 4 67 3 87 23)",
+            "description": "Enter the numbers for push_swap (e.g. 4 67 3 87 23)",
+            "default": "4 67 3 87 23"
+        },
+        {
+            "id": "ARG_CHECKER",
+            "type": "promptString",
+            "description": "Enter the numbers for checker (e.g. 4 67 3 87 23)",
             "default": "4 67 3 87 23"
         }
     ]

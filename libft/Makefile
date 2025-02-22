@@ -57,8 +57,8 @@ OBJS_DATA_TYPES  := $(patsubst $(LIBFT_DIR)/data_types/%.c, $(OBJS_DIR)/data_typ
 
 OBJS      := $(OBJS_IO) $(OBJS_MEM) $(OBJS_STR) $(OBJS_DATA_TYPES)
 
-# === Build Rules ===
-.PHONY: all clean fclean re bonus
+
+bonus: all
 
 all: $(NAME)
 
@@ -101,6 +101,5 @@ fclean: clean
 
 re: fclean all
 
-bonus: all
 
 .PHONY: all clean fclean re bonus

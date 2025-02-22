@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-__int128	ft_atoint128(const char *nptr)
 /*
 Type           | Bits  | Signed Range
 ----------------------------------------------
@@ -21,6 +20,7 @@ long           | 64    | -2⁶³ to 2⁶³-1
 long long      | 64    | Same as long
 __int128_t     | 128   | -2¹²⁷ to 2¹²⁷-1 (≈ ±1.7e³⁸)
 */
+__int128	ft_atoint128(const char *nptr)
 {
 	int			i;
 	short		sign;

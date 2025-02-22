@@ -31,13 +31,13 @@ void	print_visual_1stack(t_stack *stack, char *stack_name)
 	}
 }
 
-static void	print_headers(char *na, char *nb)
+void	print_headers(char *na, char *nb)
 {
 	ft_printf("   %-8s     |   %-8s   \n", na, nb);
 	ft_printf("----------------------------\n");
 }
 
-static void	print_stack_row(t_list_node *ca, t_list_node *cb)
+void	print_stack_row(t_list_node *ca, t_list_node *cb)
 {
 	int	va;
 	int	vb;
@@ -51,7 +51,7 @@ static void	print_stack_row(t_list_node *ca, t_list_node *cb)
 	ft_printf("|  %3d  |  <->  |  %3d  |\n", va, vb);
 }
 
-static void	update_currents(t_list_node **ca, t_list_node **cb, t_list_node *ha,
+void	update_currents(t_list_node **ca, t_list_node **cb, t_list_node *ha,
 		t_list_node *hb)
 {
 	if (*ca != NULL)

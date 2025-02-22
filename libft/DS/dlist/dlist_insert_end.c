@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "dlist.h"
+#include "libft.h"
+#include <stdlib.h>
 
-short	dlist_insert_end(t_dlist *list, void *data)
+short	dlist_insert_end(t_dlist *list, t_value_data *data)
 {
 	t_dlist_node	*new_node;
 

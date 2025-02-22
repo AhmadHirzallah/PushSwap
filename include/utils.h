@@ -32,7 +32,8 @@ enum				e_returns
 	__FAIL_MALLOC_INT_NBR__,
 	__FAIL_MALLOC_FLAGS__,
 	__FAIL_ADDING_STACKA_NBR__,
-	__FAIL
+	__FAIL,
+	__FAIL_CALLOC_BONUS__
 };
 
 typedef struct s_utils_helpers

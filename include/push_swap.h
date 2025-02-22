@@ -17,6 +17,7 @@
 # include "libft.h"
 # include "push_swap.h"
 # include "utils.h"
+# include "ft_printf.h"
 
 /*
 1. Modifying the Value (Content) of the First Element:
@@ -201,6 +202,12 @@ void	perform_rotations(t_stacks *stacks,
 int	terminate_ps(t_stacks *stacks, enum e_returns result);
 void	end_turk(t_stacks *s);
 void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, long *rot_nbr);
+void	print_headers(char *na, char *nb);
+void	print_stack_row(t_list_node *ca, t_list_node *cb);
+void	update_currents(t_list_node **ca, t_list_node **cb, t_list_node *ha,
+		t_list_node *hb);
+short	is_valid_nbr_str(const char *str);
+
 
 
 #endif
