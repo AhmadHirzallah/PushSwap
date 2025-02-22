@@ -50,7 +50,7 @@ int	get_node_value(t_list_node *node)
 // int	is_stack_sorted(t_stack *stack)
 // {
 // 	size_t	half;
-// 
+//
 // 	if (!stack || stack->list.size < 2)
 // 		return (1);
 // 	half = ((stack->list.size) / 2);
@@ -70,7 +70,6 @@ short	is_stack_sorted(t_stack *stack)
 
 	if (!stack || stack->list.size < 2)
 		return (1);
-
 	head = stack->list.head;
 	tail = stack->list.tail;
 	half = stack->list.size / 2;

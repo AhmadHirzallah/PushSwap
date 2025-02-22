@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:56:19 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 19:08:40 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:48:56 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,18 @@ short	intitalize_structs(t_stacks_bonus **ss, int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_stacks_bonus *ss;
-	enum e_rtrns rtrn_result;
+	t_stacks_bonus	*ss;
+	enum e_rtrns	rtrn_result;
 
 	if (argc == 1)
 		return (__WRNG_ARGS_NBR__);
 	rtrn_result = intitalize_structs(&ss, argc, argv);
+	if (rtrn_result != __SUCC__)
+	{
+		free_stacks_bonus(ss);
+		return (rtrn_result);
+	}
+	// bon
 	rtrn_result = extract_nbrs(ss);
 	if (rtrn_result != __SUCC__)
 	{

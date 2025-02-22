@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include "circular_stack.h"
-#include <stdlib.h>
-#include "pushswap_bonus.h"
 #include "dlist.h"
+#include "pushswap_bonus.h"
+#include <stdlib.h>
 
 /* Rotate stack a: move its head node to the tail */
 void	ra_bonus(t_d_stack *a)
@@ -22,7 +22,6 @@ void	ra_bonus(t_d_stack *a)
 
 	if (a == NULL || a->size < 2)
 		return ;
-
 	temp = a->head;
 	a->head = a->head->next;
 	a->head->prev = NULL;
@@ -40,7 +39,6 @@ void	rb_bonus(t_d_stack *b)
 
 	if (b == NULL || b->size < 2)
 		return ;
-
 	temp = b->head;
 	b->head = b->head->next;
 	b->head->prev = NULL;
@@ -66,7 +64,6 @@ void	rra_bonus(t_d_stack *a)
 
 	if (a == NULL || a->size < 2)
 		return ;
-
 	temp = a->tail;
 	a->tail = a->tail->prev;
 	a->tail->next = NULL;
@@ -84,7 +81,6 @@ void	rrb_bonus(t_d_stack *b)
 
 	if (b == NULL || b->size < 2)
 		return ;
-
 	temp = b->tail;
 	b->tail = b->tail->prev;
 	b->tail->next = NULL;

@@ -19,8 +19,8 @@
 
 static void	free_allocated_input(t_utils_helpers *helpers)
 {
-	int		index;
-	int		size;
+	int	index;
+	int	size;
 
 	index = 0;
 	size = helpers->input_size;
@@ -80,7 +80,7 @@ int	process_pushswap_data(t_stacks **stacks, t_utils_helpers **helpers,
 static void	perform_ps(t_stacks *stacks)
 {
 	__int128	size;
-	
+
 	refresh_stacks_all(stacks);
 	size = stacks->a->list.size;
 	if (size == 2)
@@ -91,7 +91,6 @@ static void	perform_ps(t_stacks *stacks)
 		sorting_algorithms(SORT_FIVE_NBRS, stacks);
 	else
 		sorting_algorithms(TURK_ALGO, stacks);
-		
 }
 
 int	push_swap(int *argc, char **argv[])
@@ -118,16 +117,16 @@ int	push_swap(int *argc, char **argv[])
 	perform_ps(stacks);
 	free_helpers(&helpers);
 	return (terminate_ps(stacks, __SUCC__));
-	
+
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	
 
 	/*********************** 				TESTS 				*********************/
 	/*********************** 									*********************/
 
 	// print_visual_1stack(stacks->a, "Stack A :) :) ");
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 
 	// perform_ps_operations(SA, stacks);
@@ -135,66 +134,79 @@ int	push_swap(int *argc, char **argv[])
 
 	// perform_ps_operations(PB, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 	// perform_ps_operations(PB, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 
 	// perform_ps_operations(SB, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 
 	// perform_ps_operations(SS, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 
 	// perform_ps_operations(SS, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 
 	// perform_ps_operations(RA, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 	// perform_ps_operations(RA, stacks);
 	// perform_ps_operations(RA, stacks);
 	// perform_ps_operations(RB, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 
 	// perform_ps_operations(RR, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 	// perform_ps_operations(RR, stacks);
 	// perform_ps_operations(RR, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 
 	// perform_ps_operations(PB, stacks);
 	// perform_ps_operations(PB, stacks);
 	// perform_ps_operations(RRR, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 	// perform_ps_operations(RRA, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 	// perform_ps_operations(RRB, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 	// perform_ps_operations(PA, stacks);
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
-	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n", stacks->a->list.size,
+	// ft_printf("Stack a size: (%d)\nStack b size: (%d)\n",
+		stacks->a->list.size,
 	// 	stacks->b->list.size);
 	return (__SUCC__);
 }

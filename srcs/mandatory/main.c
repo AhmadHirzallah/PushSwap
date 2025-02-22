@@ -16,7 +16,7 @@
 int	main(int argc, char *argv[])
 
 {
-	short	result;
+	short result;
 
 	if (argc == 1)
 		return (__WRNG_ARGS_NBR__);

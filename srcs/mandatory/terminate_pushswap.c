@@ -41,26 +41,6 @@ static void	free_stacks_helper(t_stacks *stacks)
 		free(stacks);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // static void	free_helpers_malc_flg(t_utils_helpers *helpers)
 // {
 // 	if ((helpers)->dsply_prnt_hndler.list)
@@ -70,26 +50,6 @@ static void	free_stacks_helper(t_stacks *stacks)
 // 		(helpers)->dsply_prnt_hndler.list = NULL;
 // 	}
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // static void free_utils_helper(t_utils_helpers **helpers)
 // {

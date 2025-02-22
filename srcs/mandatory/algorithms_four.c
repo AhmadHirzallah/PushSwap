@@ -21,10 +21,11 @@
 // 	best = LONG_MIN;
 // 	current = b;
 // 	target = NULL;
-	
+
 // 	while (current)
 // 	{
-// 		if ((get_node_value(current) < a_nbr) && (get_node_value(current) > best))
+// 		if ((get_node_value(current) < a_nbr)
+			&& (get_node_value(current) > best))
 // 		{
 // 			best = get_node_value(current);
 // 			target = current;
@@ -48,11 +49,11 @@
 // 	}
 // }
 
-t_list_node *find_target_node(t_list_node *a_node, t_stack *b)
+t_list_node	*find_target_node(t_list_node *a_node, t_stack *b)
 {
 	int			a_val;
-	long			closest;
-	size_t			count;
+	long		closest;
+	size_t		count;
 	t_list_node	*current;
 	t_list_node	*target;
 

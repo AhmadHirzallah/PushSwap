@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #include "circular_stack.h"
-#include <stdlib.h>
-#include "pushswap_bonus.h"
 #include "dlist.h"
-#include "utils.h"
 #include "get_next_line.h"
+#include "pushswap_bonus.h"
+#include "utils.h"
+#include <stdlib.h>
 
 /*
    perform_ps_operations_bns: Executes the corresponding operation on the stacks

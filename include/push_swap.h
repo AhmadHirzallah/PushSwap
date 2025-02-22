@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:35:45 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/21 03:16:24 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:12:39 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,8 +198,8 @@ t_list_node	*select_candidate_b_to_a(t_stacks *s, long *min_cost);
 t_list_node	*find_target_for_b(t_list_node *b_node, t_stack *a);
 t_list_node	*find_min_node(t_list_node *head);
 void		turk_algorithm_b_to_a(t_stacks *s);
-void		perform_rotations(t_stacks *stacks, long a_rot, t_stacks_oprs a_dir,
-				long b_rot, t_stacks_oprs b_dir);
+void		perform_rotations(t_stacks *stacks, t_rotation_params *a_params,
+				t_rotation_params *b_params);
 int			terminate_ps(t_stacks *stacks, enum e_returns result);
 void		end_turk(t_stacks *s);
 void		calculate_rotations(t_stack *s, t_list_node *n,
@@ -209,5 +209,6 @@ void		print_stack_row(t_list_node *ca, t_list_node *cb);
 void		update_currents(t_list_node **ca, t_list_node **cb, t_list_node *ha,
 				t_list_node *hb);
 short		is_valid_nbr_str(const char *str);
+void		process_candidate_b_to_a(t_stacks *s, t_list_node *candidate);
 
 #endif

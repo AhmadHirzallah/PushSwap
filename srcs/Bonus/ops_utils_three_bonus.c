@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include "circular_stack.h"
-#include <stdlib.h>
-#include "pushswap_bonus.h"
 #include "dlist.h"
+#include "pushswap_bonus.h"
+#include <stdlib.h>
 
 /* Swap the first two elements of stack a */
 void	sa_bonus(t_d_stack *a)
@@ -22,7 +22,6 @@ void	sa_bonus(t_d_stack *a)
 
 	if (a == NULL || a->size < 2)
 		return ;
-
 	tmp = a->head->data;
 	a->head->data = a->head->next->data;
 	a->head->next->data = tmp;
@@ -36,7 +35,6 @@ void	sb_bonus(t_d_stack *b)
 
 	if (b == NULL || b->size < 2)
 		return ;
-
 	tmp = b->head->data;
 	b->head->data = b->head->next->data;
 	b->head->next->data = tmp;

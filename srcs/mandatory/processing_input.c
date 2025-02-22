@@ -55,7 +55,7 @@ Store the integer directly in the t_value union instead of allocating memory.
 	// Assuming push_circ_stack_end now expects a pointer to t_value.
 */
 {
-	int	*int_ptr;
+	int *int_ptr;
 
 	int_ptr = malloc(sizeof(int));
 	if (!int_ptr)

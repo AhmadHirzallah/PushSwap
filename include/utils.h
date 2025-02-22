@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 22:15:05 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 20:25:10 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:51:23 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ enum				e_returns
 	__FAIL,
 	__FAIL_CALLOC_BONUS__,
 	__INVALID_CMD__,
-	__CHECKER_OK__,
 	__CHECKER_ERR__
 };
 

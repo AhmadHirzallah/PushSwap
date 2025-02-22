@@ -6,18 +6,16 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:56:12 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 19:46:35 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:51:30 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../mandatory/all_headers.h"
+#include "circular_stack.h"
+#include "dlist.h"
 #include "push_swap.h"
 #include "pushswap_bonus.h"
-
-#include "circular_stack.h"
 #include <stdlib.h>
-#include "pushswap_bonus.h"
-#include "dlist.h"
 
 /*
    is_sorted_dlist_bonus:
@@ -47,7 +45,8 @@ bool	is_sorted_dlist_bonus(t_d_stack *stack)
 /*
    free_d_stack_bonus:
    Frees all nodes in a doubly linked list (stack) along with the data held in each node.
-   It uses the stack's del function if provided, otherwise it frees the node's data directly.
+   It uses the stack's del function if provided,
+	otherwise it frees the node's data directly.
 */
 void	free_d_stack_bonus(t_d_stack *stack)
 {
@@ -55,7 +54,7 @@ void	free_d_stack_bonus(t_d_stack *stack)
 	t_dlist_node	*next;
 
 	if (!stack)
-		return;
+		return ;
 	current = stack->head;
 	while (current)
 	{
@@ -78,7 +77,7 @@ void	free_d_stack_bonus(t_d_stack *stack)
 void	free_stacks_bonus(t_stacks_bonus *ss)
 {
 	if (!ss)
-		return;
+		return ;
 	if (ss->a)
 		free_d_stack_bonus(ss->a);
 	if (ss->b)
@@ -114,7 +113,7 @@ int	display_checker_result(t_stacks_bonus *ss)
 	if (is_sorted_dlist_bonus(ss->a) && (!ss->b || ss->b->size == 0))
 	{
 		ft_printf("OK\n");
-		result = __CHECKER_OK__;
+		result = __SUCC__;
 	}
 	else
 	{

@@ -15,11 +15,6 @@
 #include "pushswap_bonus.h"
 #include <stdlib.h>
 
-#include "circular_stack.h"
-#include <stdlib.h>
-#include "pushswap_bonus.h"
-#include "dlist.h"
-
 /* Pop the first node from the doubly linked list (stack) */
 t_dlist_node	*dlist_pop_front_bonus(t_d_stack *stack)
 {
@@ -27,7 +22,6 @@ t_dlist_node	*dlist_pop_front_bonus(t_d_stack *stack)
 
 	if (stack == NULL || stack->size == 0)
 		return (NULL);
-
 	node = stack->head;
 	stack->head = node->next;
 	if (stack->head != NULL)
@@ -49,7 +43,6 @@ void	dlist_push_front_bonus(t_d_stack *stack, t_dlist_node *node)
 {
 	if (stack == NULL || node == NULL)
 		return ;
-
 	node->next = stack->head;
 	node->prev = NULL;
 	if (stack->head != NULL)
@@ -79,11 +72,9 @@ void	pa_bonus(t_d_stack *a, t_d_stack *b)
 
 	if (a == NULL || b == NULL)
 		return ;
-
 	node = dlist_pop_front_bonus(b);
 	if (node == NULL)
 		return ;
-
 	dlist_push_front_bonus(a, node);
 	// ft_printf("pa\n");
 }
@@ -95,11 +86,9 @@ void	pb_bonus(t_d_stack *a, t_d_stack *b)
 
 	if (a == NULL || b == NULL)
 		return ;
-
 	node = dlist_pop_front_bonus(a);
 	if (node == NULL)
 		return ;
-
 	dlist_push_front_bonus(b, node);
 	// ft_printf("pb\n");
 }

@@ -17,7 +17,7 @@ static void	refresh_stack_indices(t_stack *stack)
 	t_list_node	*node;
 	long		i;
 
-	if(!stack || stack->list.size == 0)
+	if (!stack || stack->list.size == 0)
 		return ;
 	node = stack->list.head;
 	i = 0;
@@ -25,7 +25,7 @@ static void	refresh_stack_indices(t_stack *stack)
 	{
 		node->index = i++;
 		node = node->next;
-		if(node == stack->list.head)
+		if (node == stack->list.head)
 			return ;
 	}
 }
@@ -49,7 +49,6 @@ void	refresh_stacks_all(t_stacks *stacks)
 	set_stacks_middles(stacks);
 }
 
-
 void	sorting_algorithms(t_sorting_cases sorting_type, t_stacks *stacks)
 {
 	if (sorting_type == SORT_TWO_NBRS)
@@ -62,32 +61,28 @@ void	sorting_algorithms(t_sorting_cases sorting_type, t_stacks *stacks)
 		turk_algorithm(stacks);
 }
 
-
-long find_min_data_index(t_circular_lst *list)
+long	find_min_data_index(t_circular_lst *list)
 {
-    t_list_node *current;
-    long min_index;
-    long min_value;
+	t_list_node	*current;
+	long		min_index;
+	long		min_value;
 
 	// min_value = LONG_MAX;
 	min_index = 0;
-    if (list->size == 0)
+	if (list->size == 0)
 		return (-1);
-    current = list->head;
-    min_value = get_node_value(current);
-    while (1)
-    {
-        if (get_node_value(current) < min_value)
+	current = list->head;
+	min_value = get_node_value(current);
+	while (1)
+	{
+		if (get_node_value(current) < min_value)
 		{
-            min_value = get_node_value(current);
-            min_index = current->index;
-        }
-        current = current->next;
+			min_value = get_node_value(current);
+			min_index = current->index;
+		}
+		current = current->next;
 		if (current == list->head)
-			break;
-    }
-
-    return min_index;
+			break ;
+	}
+	return (min_index);
 }
-
-

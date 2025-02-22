@@ -12,10 +12,10 @@
 
 #include "all_headers.h"
 
-int get_circular_len(t_list_node *head)
+int	get_circular_len(t_list_node *head)
 {
-	t_list_node *curr;
-	int len;
+	t_list_node	*curr;
+	int			len;
 
 	if (!head)
 		return (0);
@@ -26,7 +26,7 @@ int get_circular_len(t_list_node *head)
 		len++;
 		curr = curr->next;
 		if (curr == head)
-			break;
+			break ;
 	}
 	return (len);
 }
@@ -49,7 +49,7 @@ int get_circular_len(t_list_node *head)
 //         index++;
 //         curr = curr->next;
 //         if (curr == head)
-//             break;
+//             break ;
 //     }
 // }
 
@@ -60,20 +60,20 @@ int get_circular_len(t_list_node *head)
 
 // 	len = get_circular_len(head);
 // 	if (len == 0)
-// 		return;
+// 		return ;
 // 	if (len % 2 == 0)
 // 		middle = len / 2;
-// 	else 
+// 	else
 // 		middle = (len / 2) + 1;
-	
+
 // 	assign_index_flags(head, middle);
 // }
 
-t_list_node *find_closest_smaller(t_list_node *b_head, int a_nbr)
+t_list_node	*find_closest_smaller(t_list_node *b_head, int a_nbr)
 {
-	t_list_node *curr;
-	t_list_node *target;
-	long best;
+	t_list_node	*curr;
+	t_list_node	*target;
+	long		best;
 
 	if (!b_head)
 		return (NULL);
@@ -82,15 +82,14 @@ t_list_node *find_closest_smaller(t_list_node *b_head, int a_nbr)
 	curr = b_head;
 	while (1)
 	{
-		if ((get_node_value(curr) < a_nbr) &&
-			(get_node_value(curr) > best))
+		if ((get_node_value(curr) < a_nbr) && (get_node_value(curr) > best))
 		{
 			best = get_node_value(curr);
 			target = curr;
 		}
 		curr = curr->next;
 		if (curr == b_head)
-			break;
+			break ;
 	}
 	return (target);
 }
@@ -99,13 +98,13 @@ t_list_node *find_closest_smaller(t_list_node *b_head, int a_nbr)
 ** set_target_a:
 ** Assigns the best target in B for each node in A.
 */
-void set_target_a(t_list_node *a_head, t_list_node *b_head)
+void	set_target_a(t_list_node *a_head, t_list_node *b_head)
 {
 	t_list_node *curr;
 	t_list_node *target;
 
 	if (!a_head || !b_head)
-		return;
+		return ;
 	curr = a_head;
 	while (1)
 	{
@@ -115,6 +114,6 @@ void set_target_a(t_list_node *a_head, t_list_node *b_head)
 		curr->target = target;
 		curr = curr->next;
 		if (curr == a_head)
-			break;
+			break ;
 	}
 }

@@ -76,7 +76,6 @@ t_list_node	*find_max_node(t_list_node *head)
 	return (max_node);
 }
 
-
 void	sort_two(t_stack *a)
 {
 	t_list_node	*first;
