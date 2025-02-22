@@ -18,6 +18,8 @@ int	main(int argc, char *argv[])
 {
 	short	result;
 
+	if (argc == 1)
+		return (__WRNG_ARGS_NBR__);
 	result = push_swap(&argc, &argv);
 	return (result);
 }

@@ -17,6 +17,47 @@
 
 #include "all_headers.h"
 
+static void	free_allocated_input(t_utils_helpers *helpers)
+{
+	int		index;
+	int		size;
+
+	index = 0;
+	size = helpers->input_size;
+	while (index < size)
+	{
+		if (helpers->malloc_flags != NULL)
+		{
+			if (helpers->malloc_flags[index] == 1)
+			{
+				free(helpers->input[index]);
+				helpers->input[index] = NULL;
+			}
+		}
+		index++;
+	}
+}
+
+static int	free_helpers(t_utils_helpers **helpers)
+{
+	t_utils_helpers	*temp;
+
+	if (helpers == NULL)
+		return (0);
+	temp = *helpers;
+	if (temp == NULL)
+		return (0);
+	free_allocated_input(temp);
+	if (temp->malloc_flags != NULL)
+	{
+		free(temp->malloc_flags);
+		temp->malloc_flags = NULL;
+	}
+	free(temp);
+	*helpers = NULL;
+	return (0);
+}
+
 int	process_pushswap_data(t_stacks **stacks, t_utils_helpers **helpers,
 		int *argc, char ***argv)
 {
@@ -61,17 +102,21 @@ int	push_swap(int *argc, char **argv[])
 
 	stacks = NULL;
 	helpers = NULL;
-	if (!argv[0][0])
-		return (__WRNG_ARGS_NBR__);
 	result = process_pushswap_data(&stacks, &helpers, argc, argv);
 	if (result != __SUCC__)
 	{
+		free_helpers(&helpers);
 		terminate_ps(stacks, result);
 		return (result);
 	}
 	if (is_stack_sorted(stacks->a))
+	{
+		free_helpers(&helpers);
+		terminate_ps(stacks, result);
 		return (__SUCC__);
+	}
 	perform_ps(stacks);
+	free_helpers(&helpers);
 	return (terminate_ps(stacks, __SUCC__));
 	
 	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");

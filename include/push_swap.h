@@ -186,9 +186,7 @@ short	is_stack_sorted(t_stack *stack);
 void	refresh_stacks_all(t_stacks *stacks);
 void turk_algorithm(t_stacks *stacks);
 void	sorting_algorithms(t_sorting_cases sorting_type, t_stacks *stacks);
-void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, long *rot_nbr);
 void	rotate_stack(t_stack *s, long rotations, t_stacks_oprs direction, char stack_name);
-void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, long *rot_nbr);
 t_list_node *find_target_node(t_list_node *a_node, t_stack *b);
 void b_stck_psh2_set_up(t_stacks *stacks);
 void	push_min_into_b(t_stacks *stacks);
@@ -202,6 +200,7 @@ void	perform_rotations(t_stacks *stacks,
 								   long b_rot, t_stacks_oprs b_dir);
 int	terminate_ps(t_stacks *stacks, enum e_returns result);
 void	end_turk(t_stacks *s);
+void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, long *rot_nbr);
 
 
 #endif

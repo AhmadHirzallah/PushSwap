@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/circular_list.h"
-#include "../include/dlist.h"
-#include "../include/ft_printf.h"
-#include "../include/libft.h"
-#include "../include/push_swap.h"
-#include "../include/utils.h"
+#include "../../include/circular_list.h"
+#include "../../include/dlist.h"
+#include "../../include/ft_printf.h"
+#include "../../include/libft.h"
+#include "../../include/push_swap.h"
+#include "../../include/utils.h"

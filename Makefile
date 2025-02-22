@@ -8,22 +8,24 @@ endef
 
 all:
 	@$(call make_all_modules, all)
-	@$(MAKE) -C srcs
+	@$(MAKE) -C srcs/mandatory
 
 bonus:
 	@$(call make_all_modules, bonus)
-	@$(MAKE) -C srcs bonus
+	@$(MAKE) -C srcs/bonus bonus
 
 clean:
 	@$(call make_all_modules, clean)
-	@$(MAKE) -C srcs clean
+	@$(MAKE) -C srcs/mandatory clean
+	@$(MAKE) -C srcs/bonus clean
 
 fclean:
 	@$(call make_all_modules, fclean)
-	@$(MAKE) -C srcs fclean
+	@$(MAKE) -C srcs/mandatory fclean
+	@$(MAKE) -C srcs/bonus fclean
 
 re:
 	@$(call make_all_modules, re)
-	@$(MAKE) -C srcs re
+	@$(MAKE) -C srcs/mandatory re
 
 .PHONY: re fclean clean bonus all
