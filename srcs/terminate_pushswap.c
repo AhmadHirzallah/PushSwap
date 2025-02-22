@@ -37,17 +37,59 @@ static void	free_stacks_helper(t_stacks *stacks)
 		free(stacks->b);
 		stacks->b = NULL;
 	}
+	if (stacks)
+		free(stacks);
 }
 
-static void	free_helpers_malc_flg(t_utils_helpers *helpers)
-{
-	if ((helpers)->dsply_prnt_hndler.list)
-	{
-		dlist_destroy((helpers)->dsply_prnt_hndler.list);
-		free((helpers)->dsply_prnt_hndler.list);
-		(helpers)->dsply_prnt_hndler.list = NULL;
-	}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// static void	free_helpers_malc_flg(t_utils_helpers *helpers)
+// {
+// 	if ((helpers)->dsply_prnt_hndler.list)
+// 	{
+// 		dlist_destroy((helpers)->dsply_prnt_hndler.list);
+// 		free((helpers)->dsply_prnt_hndler.list);
+// 		(helpers)->dsply_prnt_hndler.list = NULL;
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // static void free_utils_helper(t_utils_helpers **helpers)
 // {
@@ -69,12 +111,14 @@ static void	free_helpers_malc_flg(t_utils_helpers *helpers)
 // 	}
 // }
 
-int	terminate_ps(t_stacks *stacks, t_utils_helpers *helpers)
+// int	terminate_ps(t_stacks *stacks, t_utils_helpers *helpers)
+int	terminate_ps(t_stacks *stacks, enum e_returns result)
 {
-	free_helpers_malc_flg(helpers);
-	helpers = NULL;
+	// free_helpers_malc_flg(helpers);
+	// helpers = NULL;
 	free_stacks_helper(stacks);
 	stacks = NULL;
-	ft_putstr_fd("Error\n", 2);
-	return (0);
+	if (result != __SUCC__)
+		ft_putstr_fd("Error\n", 2);
+	return (result);
 }

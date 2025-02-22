@@ -57,8 +57,8 @@ t_list_node *select_candidate_b_to_a(t_stacks *s, long *min_cost)
         {
             *min_cost = current->push_cost;
             candidate = current;
-            if (current->push_cost <= 2)
-                return (candidate);
+            // if (current->push_cost <= 2)
+            //     return (candidate);
         }
         current = current->next;
     }
@@ -73,9 +73,10 @@ static void process_candidate_b_to_a(t_stacks *s, t_list_node *candidate)
     long           b_rot;
 
     calculate_rotations(s->b, candidate, &b_dir, &b_rot);
-    rotate_stack(s->b, b_rot, b_dir, 'b');
     calculate_rotations(s->a, candidate->target, &a_dir, &a_rot);
-    rotate_stack(s->a, a_rot, a_dir, 'a');
+    perform_rotations(s, a_rot, a_dir, b_rot, b_dir);
+    // rotate_stack(s->b, b_rot, b_dir, 'b');
+    // rotate_stack(s->a, a_rot, a_dir, 'a');
     perform_ps_operations(PA, s);
 }
 
@@ -98,10 +99,4 @@ void turk_algorithm_b_to_a(t_stacks *s)
         set_target_for_b(s->a, s->b);
     }
 	calculate_rotations(s->a, find_max_node(s->a->list.head), &a_dir, &a_rot);
-	if (a_dir == ROTATION)
-		a_dir = RA;
-	else
-		a_dir = RRA;
-    while (s->a->list.head != find_min_node(s->a->list.head))
-		perform_ps_operations(a_dir, s);
 }

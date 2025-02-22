@@ -29,7 +29,7 @@ void	rrr(t_stack *a, t_stack *b)
 {
 	rev_rotate_circ_stack(a);
 	rev_rotate_circ_stack(b);
-	ft_printf("rrr");
+	ft_printf("rrr\n");
 }
 
 void	perform_ps_operations(t_stacks_oprs op, t_stacks *stacks)
@@ -56,5 +56,8 @@ void	perform_ps_operations(t_stacks_oprs op, t_stacks *stacks)
 		sb(stacks->b);
 	else if (op == SS)
 		ss(stacks->a, stacks->b);
-	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
+	else if (op == END_TURK)
+		end_turk(stacks);
+
+
 }

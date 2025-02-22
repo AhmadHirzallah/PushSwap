@@ -80,7 +80,7 @@ short		init_helpers(t_utils_helpers **helpers);
 */
 short		initialize_ps(t_stacks **stacks, t_utils_helpers **helpers);
 void		del_node_data(void *data);
-int			terminate_ps(t_stacks *stacks, t_utils_helpers *helpers);
+// int			terminate_ps(t_stacks *stacks, t_utils_helpers *helpers);
 short		prepare_strs_handler(t_utils_helpers *helpers);
 short		run_validation_checks(t_stack *list, __int128_t nbr);
 short		extract_nbrs_process(t_stacks *stacks, t_utils_helpers *helpers);
@@ -197,6 +197,11 @@ t_list_node *select_candidate_b_to_a(t_stacks *s, long *min_cost);
 t_list_node *find_target_for_b(t_list_node *b_node, t_stack *a);
 t_list_node	*find_min_node(t_list_node *head);
 void turk_algorithm_b_to_a(t_stacks *s);
+void	perform_rotations(t_stacks *stacks,
+								   long a_rot, t_stacks_oprs a_dir,
+								   long b_rot, t_stacks_oprs b_dir);
+int	terminate_ps(t_stacks *stacks, enum e_returns result);
+void	end_turk(t_stacks *s);
 
 
 #endif

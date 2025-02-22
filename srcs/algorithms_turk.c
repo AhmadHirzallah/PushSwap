@@ -40,8 +40,8 @@ static t_list_node *select_candidate(t_stacks *stacks, long *min_cost)
         {
             *min_cost = current->push_cost;
             candidate = current;
-            if (current->push_cost <= 2)
-                return (current);
+            // if (current->push_cost <= 2)
+            //     return (current);
         }
         current = current->next; 
     }
@@ -56,9 +56,10 @@ static void process_candidate(t_stacks *stacks, t_list_node *candidate)
     long b_rot;
 
     calculate_rotations(stacks->a, candidate, &a_dir, &a_rot);
-    rotate_stack(stacks->a, a_rot, a_dir, 'a');
     calculate_rotations(stacks->b, candidate->target, &b_dir, &b_rot);
-    rotate_stack(stacks->b, b_rot, b_dir, 'b');
+    perform_rotations(stacks, a_rot, a_dir, b_rot, b_dir);
+    // rotate_stack(stacks->a, a_rot, a_dir, 'a');
+    // rotate_stack(stacks->b, b_rot, b_dir, 'b');
     perform_ps_operations(PB, stacks);
 }
 
@@ -80,5 +81,5 @@ void turk_algorithm(t_stacks *stacks)
         sorting_algorithms(SORT_THREE_NBRS, stacks);
     while (stacks->b->list.size > 0)
         turk_algorithm_b_to_a(stacks);
-    	
+    perform_ps_operations(END_TURK, stacks);
 }

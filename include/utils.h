@@ -65,7 +65,8 @@ typedef enum s_stacks_oprs
 	SB,
 	SS,
 	ROTATION,
-	REV_ROTATION
+	REV_ROTATION,
+	END_TURK
 }					t_stacks_oprs;
 
 /*

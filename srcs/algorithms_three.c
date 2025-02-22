@@ -41,27 +41,27 @@ void	calculate_rotations(t_stack *s, t_list_node *n, t_stacks_oprs *direction, l
 		*direction = REV_ROTATION;
 }
 
-void	rotate_stack(t_stack *s, long rotations, t_stacks_oprs direction, char stack_name)
-{
-	while (rotations > 0)
-	{
-		if (direction == ROTATION)
-		{
-			if (stack_name == 'a')
-				ra(s);
-			else if (stack_name == 'b')
-				rb(s);
-		}
-		else if (direction == REV_ROTATION)
-		{
-			if (stack_name == 'a')
-				rra(s);
-			else if (stack_name == 'b')
-				rrb(s);
-		}
-		rotations--;
-	}
-}
+// void	rotate_stack(t_stack *s, long rotations, t_stacks_oprs direction, char stack_name)
+// {
+// 	while (rotations > 0)
+// 	{
+// 		if (direction == ROTATION)
+// 		{
+// 			if (stack_name == 'a')
+// 				ra(s);
+// 			else if (stack_name == 'b')
+// 				rb(s);
+// 		}
+// 		else if (direction == REV_ROTATION)
+// 		{
+// 			if (stack_name == 'a')
+// 				rra(s);
+// 			else if (stack_name == 'b')
+// 				rrb(s);
+// 		}
+// 		rotations--;
+// 	}
+// }
 
 long	compute_push_cost(t_list_node *a_node, t_list_node *b_target, t_stacks *s)
 {
@@ -81,4 +81,21 @@ long	compute_push_cost(t_list_node *a_node, t_list_node *b_target, t_stacks *s)
 	}
 	else
 		return (a_rot + b_rot);
+}
+
+void	end_turk(t_stacks *s)
+{
+	t_list_node	*min_node;
+	t_stacks_oprs ops;
+
+	if (!s || !(s->a))
+		return;
+	refresh_stacks_all(s);
+	min_node = find_min_node(s->a->list.head);
+	if (s->a_middle >= min_node->index)
+		ops = RA;
+	else
+		ops = RRA;
+    while (s->a->list.head != min_node)
+		perform_ps_operations(ops, s);
 }

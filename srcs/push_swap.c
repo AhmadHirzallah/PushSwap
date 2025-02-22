@@ -66,12 +66,15 @@ int	push_swap(int *argc, char **argv[])
 	result = process_pushswap_data(&stacks, &helpers, argc, argv);
 	if (result != __SUCC__)
 	{
-		terminate_ps(stacks, helpers);
+		terminate_ps(stacks, result);
 		return (result);
 	}
 	if (is_stack_sorted(stacks->a))
 		return (__SUCC__);
 	perform_ps(stacks);
+	return (terminate_ps(stacks, __SUCC__));
+	
+	// print_visual_2stacks(stacks->a, "A Stack", stacks->b, "B Stack");
 	
 
 	/*********************** 				TESTS 				*********************/
