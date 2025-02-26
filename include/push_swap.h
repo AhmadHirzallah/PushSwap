@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:35:45 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 21:12:39 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:41:59 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ short		init_helpers(t_utils_helpers **helpers);
 */
 short		initialize_ps(t_stacks **stacks, t_utils_helpers **helpers);
 void		del_node_data(void *data);
-// int			terminate_ps(t_stacks *stacks, t_utils_helpers *helpers);
 short		prepare_strs_handler(t_utils_helpers *helpers);
 short		run_validation_checks(t_stack *list, __int128_t nbr);
 short		extract_nbrs_process(t_stacks *stacks, t_utils_helpers *helpers);

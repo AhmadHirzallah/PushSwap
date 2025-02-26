@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:34:46 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/19 22:27:34 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:43:39 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Store the integer directly in the t_value union instead of allocating memory.
 	// Assuming push_circ_stack_end now expects a pointer to t_value.
 */
 {
-	int *int_ptr;
+	int	*int_ptr;
 
 	int_ptr = malloc(sizeof(int));
 	if (!int_ptr)

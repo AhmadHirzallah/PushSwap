@@ -19,7 +19,7 @@ void	ft_add_n_chrs_into_bfr(t_data_s *data_s, int len, int c)
 		return ;
 	while (len--)
 	{
-		if (BUFFER_SIZE > data_s->printf_buf_len)
+		if (BUFFER_SIZE_PRINTF > data_s->printf_buf_len)
 			data_s->printf_buffer[data_s->printf_buf_len++] = (char)c;
 		else
 		{

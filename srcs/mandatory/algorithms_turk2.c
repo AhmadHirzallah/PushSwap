@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 21:26:45 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 21:26:46 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:45:21 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ t_list_node	*select_candidate_b_to_a(t_stacks *s, long *min_cost)
 		{
 			*min_cost = current->push_cost;
 			candidate = current;
-			// if (current->push_cost <= 2)
-			//     return (candidate);
 		}
 		current = current->next;
 	}

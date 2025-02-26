@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 17:56:27 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 19:16:08 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:28:58 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	sa_bonus(t_d_stack *a)
 	tmp = a->head->data;
 	a->head->data = a->head->next->data;
 	a->head->next->data = tmp;
-	// ft_printf("sa\n");
 }
 
 /* Swap the first two elements of stack b */
@@ -38,7 +37,6 @@ void	sb_bonus(t_d_stack *b)
 	tmp = b->head->data;
 	b->head->data = b->head->next->data;
 	b->head->next->data = tmp;
-	// ft_printf("sb\n");
 }
 
 /* Swap the first two elements of both stacks a and b */
@@ -46,5 +44,4 @@ void	ss_bonus(t_d_stack *a, t_d_stack *b)
 {
 	sa_bonus(a);
 	sb_bonus(b);
-	// ft_printf("ss\n");
 }

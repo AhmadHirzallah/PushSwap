@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 17:20:50 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 19:50:46 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:31:51 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 #include <stdlib.h>
 
 /*
-   perform_ps_operations_bns: Executes the corresponding operation on the stacks
+   perform_ps_operations_bns:
+   Executes the corresponding operation on the stacks
    based on the provided op code.
-   Note: The stacks parameter is a double pointer; we dereference it to access each stack.
+   Note: The stacks parameter is a double pointer;
+	we dereference it to access each stack.
 */
 static void	perform_ps_operations_bns(t_stacks_oprs op, t_stacks_bonus **stacks)
 {

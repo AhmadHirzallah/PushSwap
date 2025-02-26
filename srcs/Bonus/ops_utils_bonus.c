@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 17:47:06 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 19:16:00 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:28:51 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	rrr_bonus(t_d_stack *a, t_d_stack *b)
 {
 	rra_bonus(a);
 	rrb_bonus(b);
-	// ft_printf("rrr\n");
 }
 
 /* Push the top node from stack b to stack a */
@@ -76,7 +75,6 @@ void	pa_bonus(t_d_stack *a, t_d_stack *b)
 	if (node == NULL)
 		return ;
 	dlist_push_front_bonus(a, node);
-	// ft_printf("pa\n");
 }
 
 /* Push the top node from stack a to stack b */
@@ -90,5 +88,4 @@ void	pb_bonus(t_d_stack *a, t_d_stack *b)
 	if (node == NULL)
 		return ;
 	dlist_push_front_bonus(b, node);
-	// ft_printf("pb\n");
 }

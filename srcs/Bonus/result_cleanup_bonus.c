@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:56:12 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 20:51:30 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:33:46 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 
 /*
    is_sorted_dlist_bonus:
-   Efficiently checks if the doubly linked list (stack) is sorted in ascending order.
+   Efficiently checks if the doubly linked list
+   (stack) is sorted in ascending order.
    It uses two pointers (one starting at the head and the other at the tail)
    and performs iterations for half of the list length.
 */
@@ -44,7 +45,8 @@ bool	is_sorted_dlist_bonus(t_d_stack *stack)
 
 /*
    free_d_stack_bonus:
-   Frees all nodes in a doubly linked list (stack) along with the data held in each node.
+   Frees all nodes in a doubly linked list (stack)
+   along with the data held in each node.
    It uses the stack's del function if provided,
 	otherwise it frees the node's data directly.
 */
@@ -69,11 +71,6 @@ void	free_d_stack_bonus(t_d_stack *stack)
 	free(stack);
 }
 
-/*
-   free_stacks_bonus:
-   Frees both stack 'a' and stack 'b' contained in the t_stacks_bonus structure,
-   then frees the structure itself.
-*/
 void	free_stacks_bonus(t_stacks_bonus *ss)
 {
 	if (!ss)
@@ -85,13 +82,6 @@ void	free_stacks_bonus(t_stacks_bonus *ss)
 	free(ss);
 }
 
-/*
-   check_result_bonus:
-   Checks the final state of the stacks:
-   - Stack 'a' must be sorted in ascending order.
-   - Stack 'b' must be empty.
-   Prints "OK" if the conditions are met, "KO" otherwise.
-*/
 void	check_result_bonus(t_d_stack *a_stack, t_d_stack *b_stack)
 {
 	if (is_sorted_dlist_bonus(a_stack) && (!b_stack || b_stack->size == 0))
@@ -100,12 +90,6 @@ void	check_result_bonus(t_d_stack *a_stack, t_d_stack *b_stack)
 		ft_putstr_fd("KO\n", 1);
 }
 
-/*
-   check_final_result:
-   A high-level function that uses check_result_bonus to print the final result,
-   then frees all allocated memory for the stacks.
-   Returns 1 if the result is OK (sorted and b is empty), or 0 otherwise.
-*/
 int	display_checker_result(t_stacks_bonus *ss)
 {
 	int	result;

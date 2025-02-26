@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:35:28 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/21 03:04:46 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:36:57 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,44 +30,6 @@ int	get_circular_len(t_list_node *head)
 	}
 	return (len);
 }
-
-////// Maybe needed function...
-// void assign_index_flags(t_list_node *head, int middle)
-// {
-//     t_list_node *curr;
-//     int index;
-
-//     index = 0;
-//     curr = head;
-//     while (1)
-//     {
-//         curr->index = index;
-//         if (index <= middle)
-//             turk_set_flag(curr, BELOW_MEDIAN);
-//         else
-//             turk_set_flag(curr, ABOVE_MEDIAN);
-//         index++;
-//         curr = curr->next;
-//         if (curr == head)
-//             break ;
-//     }
-// }
-
-// void current_index(t_list_node *head)
-// {
-// 	int len;
-// 	int middle;
-
-// 	len = get_circular_len(head);
-// 	if (len == 0)
-// 		return ;
-// 	if (len % 2 == 0)
-// 		middle = len / 2;
-// 	else
-// 		middle = (len / 2) + 1;
-
-// 	assign_index_flags(head, middle);
-// }
 
 t_list_node	*find_closest_smaller(t_list_node *b_head, int a_nbr)
 {
@@ -94,14 +56,10 @@ t_list_node	*find_closest_smaller(t_list_node *b_head, int a_nbr)
 	return (target);
 }
 
-/*
-** set_target_a:
-** Assigns the best target in B for each node in A.
-*/
 void	set_target_a(t_list_node *a_head, t_list_node *b_head)
 {
-	t_list_node *curr;
-	t_list_node *target;
+	t_list_node	*curr;
+	t_list_node	*target;
 
 	if (!a_head || !b_head)
 		return ;

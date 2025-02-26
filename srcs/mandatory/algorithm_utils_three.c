@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 21:26:32 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 21:26:33 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:48:18 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,9 +122,6 @@ static void	perform_combined_rotations(t_stacks *stacks,
 void	perform_rotations(t_stacks *stacks, t_rotation_params *a_params,
 		t_rotation_params *b_params)
 {
-	// perform_combined_rotations(stacks, &a_params->rotations,
-		&a_params->direction,
-	//                            &b_params->rotations, &b_params->direction);
 	perform_combined_rotations(stacks, a_params, b_params);
 	while (a_params->rotations > 0)
 	{

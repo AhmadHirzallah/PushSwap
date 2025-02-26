@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:35:22 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/21 03:20:58 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:35:36 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ long	find_min_data_index(t_circular_lst *list)
 	long		min_index;
 	long		min_value;
 
-	// min_value = LONG_MAX;
 	min_index = 0;
 	if (list->size == 0)
 		return (-1);

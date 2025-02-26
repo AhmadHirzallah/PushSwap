@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahirzall <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:59:47 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/11 19:57:19 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:51:19 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define BUFFER_SIZE 4096
+# define BUFFER_SIZE_PRINTF 4096
 # define SPECIFIERS "%cspdiuxX"
 # define HEXADE_LOWER "0123456789abcdef"
 # define HEXADE_UPPER "0123456789ABCDEF"

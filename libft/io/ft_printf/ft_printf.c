@@ -17,7 +17,7 @@ static int	ft_init_data(t_data_s *data_s, const char *fmt)
 {
 	data_s->dynmc_nbr.int64 = 0;
 	data_s->str = fmt;
-	data_s->printf_buffer = ft_calloc(BUFFER_SIZE, sizeof(char));
+	data_s->printf_buffer = ft_calloc(BUFFER_SIZE_PRINTF, sizeof(char));
 	if (NULL == data_s->printf_buffer)
 		return (MALLOC_ERR);
 	data_s->printf_buf_len = 0;
@@ -53,5 +53,5 @@ int	ft_printf(const char *fmt, ...)
 	free(data_s.printf_buffer);
 	return (data_s.rtrn_printf_value);
 }
-	// if (data_s.rtrn_printf_value > BUFFER_SIZE)
+	// if (data_s.rtrn_printf_value > BUFFER_SIZE_PRINTF)
 		// return (data_s.rtrn_printf_value + 1);

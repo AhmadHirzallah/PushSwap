@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 18:56:19 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 20:48:56 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:34:15 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,14 +101,12 @@ int	main(int argc, char **argv)
 		free_stacks_bonus(ss);
 		return (rtrn_result);
 	}
-	// bon
 	rtrn_result = extract_nbrs(ss);
 	if (rtrn_result != __SUCC__)
 	{
 		free_stacks_bonus(ss);
 		return (rtrn_result);
 	}
-	// bonus_print_visual_2dstacks(ss->a, "Stack a", ss->b, "Stack b");
 	check_user_input_ops(ss);
 	return (display_checker_result(ss));
 }

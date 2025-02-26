@@ -6,7 +6,7 @@
 /*   By: ahirzall <ahirzall@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 17:35:39 by ahirzall          #+#    #+#             */
-/*   Updated: 2025/02/22 19:15:48 by ahirzall         ###   ########.fr       */
+/*   Updated: 2025/02/22 21:28:45 by ahirzall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	ra_bonus(t_d_stack *a)
 	temp->prev = a->tail;
 	temp->next = NULL;
 	a->tail = temp;
-	// ft_printf("ra\n");
 }
 
 /* Rotate stack b: move its head node to the tail */
@@ -46,7 +45,6 @@ void	rb_bonus(t_d_stack *b)
 	temp->prev = b->tail;
 	temp->next = NULL;
 	b->tail = temp;
-	// ft_printf("rb\n");
 }
 
 /* Rotate both stacks a and b */
@@ -54,7 +52,6 @@ void	rr_bonus(t_d_stack *a, t_d_stack *b)
 {
 	ra_bonus(a);
 	rb_bonus(b);
-	// ft_printf("rr\n");
 }
 
 /* Reverse rotate stack a: move its tail node to the head */
@@ -71,7 +68,6 @@ void	rra_bonus(t_d_stack *a)
 	temp->next = a->head;
 	a->head->prev = temp;
 	a->head = temp;
-	// ft_printf("rra\n");
 }
 
 /* Reverse rotate stack b: move its tail node to the head */
@@ -88,5 +84,4 @@ void	rrb_bonus(t_d_stack *b)
 	temp->next = b->head;
 	b->head->prev = temp;
 	b->head = temp;
-	// ft_printf("rrb\n");
 }

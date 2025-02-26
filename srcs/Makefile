@@ -11,14 +11,14 @@ OBJDIR      := ../objs/srcs/mandatory
 OBJDIR_BONUS := ../objs/srcs/bonus
 
 
-SRCS := main.c print_to_visualize.c processing_input.c push_swap.c \
+SRCS := main.c processing_input.c push_swap.c \
 	validation_checks.c terminate_pushswap.c initializations.c is_stack_sorted.c \
 	operations3.c operations.c operations2.c algorithms_two.c algorithms_turk.c \
 	 algorithms_four.c algorithm_utils.c algorithm_utils_two.c \
 	algorithms.c flags_manipulation.c min_sort.c algorithms_turk2.c \
 	algorithms_three.c algorithm_utils_three.c
 
-SRCS_BONUS := ps_main_bonus.c checker_utils_bonus.c print_visualize_bonus.c \
+SRCS_BONUS := ps_main_bonus.c checker_utils_bonus.c \
 	operations_bonus.c bonus_utils.c ops_utils_bonus.c ops_utils_three_bonus.c \
 	result_cleanup_bonus.c
 
